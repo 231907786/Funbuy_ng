@@ -1,0 +1,23 @@
+{
+    "header": {
+        "timeText": "2016-02-14 05:00:00",
+        "stateText": "已结算"
+    },
+    "teamA": {
+        "name": "mousesports",
+        "img": "http://lorempixel.com/130/80",
+        "win": true,
+        "odds": 0.66,
+        "winRate": 43
+    },
+    "teamB": {
+        "name": "Flipsid3 Tactics",
+        "img": "http://lorempixel.com/130/80",
+        "win": false,
+        "odds": 0.66,
+        "winRate": 56
+    },
+    "matchName": "Acer Predator Masters Season 2-Acer Predator Masters Season 2",
+    "score": "2 : 0",
+    "rounds": 3
+}

@@ -1,0 +1,71 @@
+[{
+    "id": 12580,
+    "name": "我要打一万个",
+    "winRate": "26",
+    "bottomText": "- 32,563,450 P",
+    "level": 4,
+    "imgSrc": "images/avatar_5.jpg"
+}, {
+    "id": 11258,
+    "name": "小小小小小小小",
+    "winRate": "27",
+    "bottomText": "- 32,563,450 P",
+    "level": 2,
+    "imgSrc": "images/avatar_5.jpg"
+}, {
+    "id": 16126,
+    "name": "Arvinichii",
+    "winRate": "30",
+    "bottomText": "- 32,563,450 P",
+    "level": 5,
+    "imgSrc": "images/avatar_1.jpg"
+}, {
+    "id": 19869,
+    "name": "这个名字能ROLL中",
+    "winRate": "19",
+    "bottomText": "- 32,563,450 P",
+    "level": 7,
+    "imgSrc": "images/avatar_1.jpg"
+}, {
+    "id": 13870,
+    "name": "kashiro_kashiro",
+    "winRate": "22",
+    "bottomText": "- 32,563,450 P",
+    "level": 6,
+    "imgSrc": "images/avatar_4.jpg"
+}, {
+    "id": 18629,
+    "name": "我要打一万个",
+    "winRate": "18",
+    "bottomText": "- 32,563,450 P",
+    "level": 4,
+    "imgSrc": "images/avatar_5.jpg"
+}, {
+    "id": 16127,
+    "name": "Arvinichii",
+    "winRate": "34",
+    "bottomText": "- 32,563,450 P",
+    "level": 2,
+    "imgSrc": "images/avatar_1.jpg"
+}, {
+    "id": 13561,
+    "name": "Muslimin Palembang",
+    "winRate": "16",
+    "bottomText": "- 32,563,450 P",
+    "level": 8,
+    "imgSrc": "images/avatar_3.jpg"
+}, {
+    "id": 19206,
+    "name": "Muslimin Palembang",
+    "winRate": "15",
+    "bottomText": "- 32,563,450 P",
+    "level": 5,
+    "imgSrc": "images/avatar_4.jpg"
+}, {
+    "id": 16964,
+    "name": "Arvinichii",
+    "winRate": "32",
+    "bottomText": "- 32,563,450 P",
+    "level": 2,
+    "imgSrc": "images/avatar_2.jpg"
+}]

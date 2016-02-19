@@ -1,0 +1,25 @@
+{
+	"interval": 3000,
+	"slides":[
+		{
+			"href": "1",
+			"title": "2",
+			"image": "http://lorempixel.com/1080/390"
+		},
+		{
+			"href": "1",
+			"title": "2",
+			"image": "http://lorempixel.com/1080/390"
+		},
+		{
+			"href": "1",
+			"title": "2",
+			"image": "http://lorempixel.com/1080/390"
+		},
+		{
+			"href": "1",
+			"title": "2",
+			"image": "http://lorempixel.com/1080/390"
+		}
+	]
+}

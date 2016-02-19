@@ -1,0 +1,194 @@
+a{color: #258db9;}
+.roll-hd{text-align: right;margin-bottom: 20px;padding-bottom:7px;border-bottom:2px solid #0d355c;}
+.roll-hd .common-breadcrumb{background: transparent;}
+.roll-zan{line-height: 11px;color: #bbb;display: inline-block;cursor: pointer;}
+.zan-icon{display: inline-block;width:24px;height:18px;background-image: url(../images/img/roll-icon.png);background-repeat: no-repeat;background-position: -117px -94px;vertical-align: middle;margin-right: 5px;margin-top: -3px;}
+.step-icon{display: inline-block;width:24px;height:18px;background-image: url(../images/img/roll-icon.png);background-repeat: no-repeat;background-position: -146px -94px;vertical-align: middle;margin-right: 5px;margin-top: -3px;}
+.roll-zan.active{color: #258db9;}
+.roll-zan.active .zan-icon{background-position: -23px -1px;}
+.roll-bodyer{background-image: url(../images/img/roll-bg.jpg);background-repeat: no-repeat;background-position: top center ;padding-top: 5px;min-height: 700px;}
+.btn-zan{background-color: transparent;font-size: 12px;color: #258db9;border-color: #258db9;border-radius: 2px;height: 26px;line-height: 12px;}
+.btn-zan:hover{color: #258db9;box-shadow: 0 0 10px #258db9;-webkit-transition: all 320ms;-ms-transition: all 320ms;-moz-transition: all 320ms;transition: all 320ms;}
+.btn-zan:active,.btn-zan:focus,.btn-zan:active:hover,.btn-zan:focus:hover{box-shadow: none;border-color: #666;color: #666;}
+.btn-join{background-color: transparent;font-size: 12px;color: #ff6600;border-color: #ff6600;border-radius: 2px;height: 26px;line-height: 12px;}
+.btn-join:hover{color: #ff6600;box-shadow: 0 0 10px #ff6600;-webkit-transition: all 320ms;-ms-transition: all 320ms;-moz-transition: all 320ms;transition: all 320ms;}
+.btn-join:active,.btn-join:focus,.btn-join:active:hover,.btn-join:focus:hover{box-shadow: none;border-color: #ff6600;color: #ff6600;}
+.btn-found-roll{color: #79a118;border-color: #79a118;height: 26px;line-height: 12px;background-color: transparent;}
+.btn-found-roll:hover{color: #79a118;box-shadow: 0 0 10px #79a118;-webkit-transition: all 320ms;-ms-transition: all 320ms;-moz-transition: all 320ms;transition: all 320ms;}
+.btn-found-roll:active,.btn-found-roll:focus,.btn-found-roll:active:hover,.btn-found-roll:focus:hover{color: #79a118;box-shadow: 0 0 10px #79a118;}
+.roll-user-box{margin-bottom: 20px;}
+.roll-user-img{float: left;width: 106px;height:106px;border:3px solid #191c20;padding:3px;background-color: #444749;border-radius: 58px;margin-left: 10px;}
+.roll-user-img img{display: block;border-radius: 58px;background-color: transparent;}
+.roll-user-info{margin-left: 142px;min-height: 106px;padding-top: 10px;}
+.roll-user-name{font-size: 16px;color: #bbb;}
+.roll-user-name .level-9{font-size: 12px;}
+.roll-room-list .roll-title{margin:0 0 5px 10px;}
+.roll-title{display: inline-block;font-size: 12px;padding:0 9px;height: 19px;line-height: 17px;color: #8c8c8c;background: #3d3d3f;border-radius: 8px;margin: 0 10px 5px 0;border:1px solid;border-color:#3d3d3f;}
+.roll-title.roll-title-1{border-color: #968020;color:#968020;background: transparent;}
+.roll-title.roll-title-2{border-color: #ca5434;color:#ca5434;background: transparent;}
+.roll-title.roll-title-3{border-color: #83a523;color:#83a523;background: transparent;}
+.roll-title.roll-title-4{border-color: #bb86ff;color:#bb86ff;background: transparent;}
+.roll-title.roll-title-5{border-color: #50b9dc;color:#50b9dc;background: transparent;}
+.roll-title.roll-title-7{border-color: #f5a800;color:#f5a800;background: transparent;}
+.roll-room-list .roll-title:first-child{margin-left: 0;}
+.roll-user-about{color: #888;font-size: 12px; margin-top: 10px;}
+.roll-user-info .divide{border-color: #1f2225;margin:7px 0;}
+.roll-microblog-weibo{display: inline-block;width: 19px;height: 16px;background: url(../images/img/microblog-icon.png) no-repeat -1px -1px;vertical-align: middle;margin-top: -4px;}
+.roll-microbolg-qq{display: inline-block;vertical-align: middle;width: 17px;height: 16px;background: url(../images/img/microblog-icon.png) no-repeat -25px -1px;margin-top: -4px;}
+.roll-microbolg-fb{display: inline-block;vertical-align: middle;width: 16px;height: 16px;background: url(../images/img/microblog-icon.png) no-repeat -45px 0;margin-top: -4px;}
+.roll-microbolg-tt{display: inline-block;vertical-align: middle;width: 16px;height: 15px;background: url(../images/img/microblog-icon.png) no-repeat -64px 0px;margin-top: -4px;}
+.roll-block{padding:10px;background-color: #262626;margin-bottom: 10px;}
+.roll-block-tt{font-size: 14px;color: #bbb;font-weight: 500;color: #999;font-family: 'Helvetica Neue','Lucida Grande','Microsoft YaHei',Arial,'Liberation Sans',FreeSans,'Hiragino Sans GB';margin:0 0 10px;}
+.roll-room-time{font-size: 14px;color: #bbb;line-height: 100%;padding:5px 0;}
+.roll-block .divide{border-color: #333;margin:10px 0;}
+.roll-room-about{font-size: 12px;color: #999;}
+.roll-prize{padding: 10px 0 0 10px;background-color: #1a1a1a;}
+.roll-prize label{font-weight: 500;margin-bottom: 0;}
+.roll-prize .steam-item{width: 80px;height: 53px;margin-bottom: 0;margin-right: 0;float:none;}
+.roll-prize .steam-item input[type="checkbox"]{position:absolute;width:0;height:0;opacity: 0;filter:alpha(opacity=0);}
+.roll-prize .steam-item input[type="checkbox"]:checked ~ .selected-right-icon,.roll-prize .steam-item.active .selected-right-icon{display: block;}
+.roll-prize li{float: left;width:80px;margin: 0 10px 10px 0;}
+.roll-prize-del{cursor: pointer;}
+.btn-add-prize{display:block;width: 80px;height: 53px;background: url(../images/img/roll-icon.png) no-repeat 0 -54px;cursor: pointer;}
+.roll-number-input{width: 83px;height:29px;border:1px solid #323232;padding:5px 12px;text-align: center;color: #666;font-size:12px;background-color: #1a1a1a;margin-left: 10px;line-height: 16px;}
+.btn-roll{width: 101px;height: 27px;background-color: #ff6600;color: #fff;font-size: 14px;vertical-align: top;border-radius: 2px;line-height: 15px;}
+.btn-roll:hover{color: #fff;}
+.btn-roll:active,.btn-roll:focus,.btn-roll:active:hover,.btn-roll:focus:hover{color: #fff;}
+.roll-in-prize li{padding:10px 0 0 21px;background-color: #1a1a1a;}
+.roll-in-prize li.even{background-color: #262626;}
+.roll-in-prize li:hover .name-list-img{box-shadow: 0 0 5px #fff;}
+.name-list-img{width: 51px;height: 51px;border:3px solid #535353;border-radius: 45px;display: inline-block;vertical-align: middle;}
+.name-list-img img{display: block;border-radius: 45px;background-color:transparent;}
+.roll-in-name{display: inline-block;margin-left: 5px;width: 100px;vertical-align: middle;color: #bbb;}
+.roll-in-win{display: inline-block;vertical-align: middle;margin-left: 10px;}
+.roll-in-steam{width: 450px;margin-left: 257px;}
+.join-name-list{background-color: #1a1a1a;padding:10px 0;text-align: center;margin-bottom: 10px;}
+.join-name-list a:hover .join-name{color: #ff6600;} 
+.join-name-list a:hover .name-list-img{box-shadow: 0 0 5px #fff;}
+.join-name-list .name-list-img{margin-bottom: 5px;}
+.join-name-list li{float: left;width: 12.5%;padding:0 5px;}
+.roll-block .join-name-list li{margin-bottom:5px;}
+.join-name{color: #bbb;}
+.time-edit{font-size: 14px;color: #8c8c8c;cursor: pointer;}
+.time-edit:active,.time-edit:focus,.time-edit:active:hover,.time-edit:focus:hover{color: #258db9}
+.time-edit:hover{color: #258db9;}
+.time-edit:hover .time-edit-icon{background:url(../images/img/roll-icon.png) no-repeat -66px -1px;}
+.time-edit-icon{display: inline-block;width:16px;height: 16px;background: url(../images/img/roll-icon.png) no-repeat -47px -1px;vertical-align: middle;margin: -2px 5px 0 0}
+.roll-prize-history .divide{border-top:2px solid #333;margin-bottom: 0;}
+.prize-history-box{border-top: 1px solid #2c2c2c;padding:10px 0;}
+.prize-history-list li{padding:0 10px;width: 100%;box-sizing:content-box;margin-left: -10px;overflow: hidden;}
+.prize-history-list li.active{background: #1a1a1a;}
+.prize-history-list li:hover{background: #1a1a1a;}
+.prize-history-list li:first-child .prize-history-box{border-top: 0;}
+.prize-history-img{width: 34px;height: 34px;border:2px solid #5c5c5c;border-radius: 30px;display: inline-block;vertical-align: middle;}
+.prize-history-img img{display: block;border-radius: 50px;background-color: transparent;}
+.prize-history-name{display: inline-block;width: 60px;vertical-align: middle;color: #bbb;margin-left: 5px;}
+.prize-history-steam{float: right;width: 190px;text-align: left;margin-top: 8px;}
+.prize-history-bag .steam-item{margin: 10px 10px 0 0;width: 65px;height: 44px;}
+.prize-history-list li:hover .prize-history-img{box-shadow: 0 0 4px #fff;}
+.roll-success-list{padding:10px 10px 1px;margin:0 10px;background: #262626;}
+.roll-success-list > li{padding:15px 0 5px 15px;background:url(../images/img/roll-success-bg.jpg);margin-bottom: 10px;border:1px solid #333;}
+.roll-success-img{float: left;width: 72px;height: 72px;padding:3px;background: #4d4d4d;border:3px solid #242424;border-radius: 50px;background-color: #4d4d4d;}
+.roll-success-img img{display: block;border-radius: 50px;background-color:transparent;}
+.roll-success-info{margin-left: 85px;padding-top: 10px;}
+.roll-success-main{width: 172px;float: left;}
+.roll-success-name{color: #bbb;}
+.roll-success-steam{padding-top: 10px;margin-left: 180px;}
+.found-romm-user{padding:15px 0 15px 15px;background:url(../images/img/roll-success-bg.jpg);margin-bottom: 10px;border:1px solid #333;}
+.found-romm-info{margin-left: 85px;padding-top: 15px;}
+.found-romm-name{color: #bbb;font-size: 14px;margin-right: 5px;}
+.found-room{padding:10px 10px 1px;background: #262626;}
+.found-room .control-label{font-weight: 500;}
+.found-room .form-control{background: #1a1a1a;border:1px solid #323232;border-radius: 0;color: #999;}
+.found-room .col-sm-10{width: 81.33333333333334%;padding-left: 0;}
+.form-control.room-info{height:65px;overflow: hidden}
+.form-control.room-datetime{width: 158px;height: 29px;line-height: 15px;border:1px solid #323232;background: #1a1a1a;text-align: center;text-align: center;color: #999;padding:6px 12px;display:inline-block;cursor:pointer;}
+.roll-room-screen{padding-top: 10px;float: left;}
+.roll-room-screen > li{float: left;border-left:1px solid #313131;height: 16px;line-height: 16px;font-size: 14px;}
+.roll-room-screen > li > a{color: #999;padding:0 15px;display: block;height: 19px;line-height: 19px;margin-top:-1px;}
+.roll-room-screen > li.roll-screen-item.active a{background-color: #ff6600;color:#fff;}
+.roll-room-screen > li > a:hover{color: #ff6600;}
+.roll-room-screen > li:first-child{padding-left: 0;border-left: 0;}
+.roll-room-screen > li.active > a{color: #ff6600;}
+.roll-room-screen .dropdown-menu{background-color: #262626;margin-top:5px;width: 196px;padding:0 5px;left: -58px;}
+.roll-room-screen .dropdown-menu>li.caret{width:0;height:0;float:none;display:block;border:7px solid transparent;border-bottom: 9px solid #262626;position:absolute;left:50%;top:-21px;margin-left:-7px;}
+.roll-room-screen .dropdown-menu>li{float: left;width:92px;padding:3px 0;text-align: left;}
+.roll-room-screen .dropdown-menu>li>a{text-align: left;padding:3px 0;margin-left: 15px;display: inline;}
+.roll-room-screen .dropdown-menu>li>a:active,.roll-room-screen .dropdown-menu>li>a:hover,.roll-room-screen .dropdown-menu>li>a:focus{background-color: transparent;}
+.roll-room-search{width: 180px;height: 26px;background: #1a1a1a;color: #999;border:1px solid #333;border-radius: 2px;padding:6px 35px 6px 12px;line-height: 12px;}
+.roll-search-box{float: right;position: relative;margin-top: 5px;margin-left: 10px;}
+.btn-roll-search{position: absolute;height: 100%;width: 29px;right:0;top:0;text-align: center;line-height: 15px;background: transparent;border:0;outline: none;}
+.roll-search-icon{display: inline-block;width: 16px;height: 17px;background: url(../images/img/roll-icon.png) no-repeat 0 -23px;}
+.btn-roll-search:active .roll-search-icon,.btn-roll-search:focus .roll-search-icon{background: url(../images/img/roll-icon.png) no-repeat -21px -23px;}
+.roll-room-list{padding-top: 50px;margin-right: -32px;position: relative;}
+.roll-room-list li{position:relative;float: left;width: 246px;height: 283px;background-image: url(../images/img/roll-list-bg.jpg);padding-top: 40px;margin-right: 32px;margin-bottom: 55px;}
+.roll-room-img{position: absolute;left:90px;top:-37px;width: 72px;height: 72px;}
+.roll-room-img b{position: absolute;left:0;top:0;display:block;width: 72px;height: 72px;background: #fff;opacity: 0.08;filter:alpha(opacity=8);padding:3px;border-radius: 50px;}
+.roll-room-img b + b{opacity: 0.25;filter:alpha(opacity=25);width: 66px;height: 66px;left:3px;top:3px;}
+.roll-room-img img{position: relative;display:block;border-radius: 50px;margin:6px;background-color: transparent;}
+.roll-room-name{margin:0 10px 5px;text-align: center;color: #999;}
+.roll-room-info{height: 130px;border-top:1px solid ;border-bottom: 1px solid;border-color: #333;background-color: #262626;padding:10px;}
+.roll-room-info .divide{border-color: #313131;margin:10px 0;}
+.roll-prize-poll .empty{display: none;}
+.roll-room-title{height:24px;text-align: center;margin-bottom: 10px;overflow: hidden;}
+.roll-room-content{color: #8c8c8c;height: 36px;overflow: hidden;background:url(../images/img/roll-content.png);}
+.btn-roll-room{min-width:140px;height: 30px;border:1px solid #5f5f5f;background: #262626;text-align: center;font-size: 14px;line-height: 16px;color: #6e6e6e;}
+span.btn-roll-room:hover{color:#6e6e6e;}
+.btn-roll-ft{height:56px;text-align: center;padding-top:14px;background:url(../images/img/roll-list-bg1.jpg)}
+.btn-roll-room.active{color:#ff6600;cursor: pointer;}
+.btn-roll-room.active:hover{background: #ff6600;color: #fff;border:0;line-height: 18px;}
+.roll-room-my{background-color: transparent;font-size: 12px;color: #258db9;border-color: #258db9;border-radius: 2px;height: 26px;line-height: 12px;}
+.roll-room-my:active,.roll-room-my:hover, .roll-room-my:focus,.roll-room-my:active:hover,.roll-room-my:focus:hover{color: #258db9;box-shadow: 0 0 10px #258db9;}
+.roll-room-my.active{background-color: #258db9;color:#fff;}
+
+#roll-steam-modal .modal-dialog{width: 650px;}
+#roll-steam-modal .modal-body{background-color: #262626;padding:0;}
+#roll-steam-selected{padding:10px;border-bottom: 2px solid #333}
+#roll-steam-selected .selected-right-icon{display: none;}
+.roll-steam-bag{background-color: #111;border:1px solid #333;padding:7px 0 0 7px;}
+#roll-steam-modal .dropdown-toggle.selectpicker {background-color: #1a1a1a;}
+#roll-steam-modal  .bag-select .btn-default{min-width: 90px;}
+#roll-steam-modal .bag-select{padding:8px 0;}
+#roll-steam-bag{padding:10px;padding-right:0;}
+#roll-steam-modal .search-control{background-color: #1a1a1a;width: 200px;}
+#roll-steam-modal .steam-item{margin-right: 10px;margin-bottom: 10px;cursor:pointer;}
+
+.bag-type{display:inline-block;width:100%;padding-right:10px;}
+.bag-type .ajax-sort{color:#999;}
+.bag-type .ajax-sort.asc,.bag-type .ajax-sort.desc{color:#79a118;}
+.grayscale{-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); _filter:none; }
+
+.roll-success-list .join-name-list{padding: 0px;background-color: transparent;margin:0 15px 10px 0;  display: inline-block;}
+.roll-success-list > li{text-align: center;}
+.roll-success-list .join-name-list li{width: 90px;margin:10px;overflow: hidden;height: 79px;}
+.roll-success-list .join-name-list li.current .name-list-img{border:3px solid #ff6600;}
+.roll-success-list .join-name-list li.current .join-name{color: #ff6600;}
+.roll-draw-item{overflow: hidden;overflow: hidden;padding-top: 5px;height: 79px;}
+.slotmachine-switch-box{position: absolute;  right: -104px;top: 68px;width: 100px;height: 20px;background-color: #111;}
+.slotmachine-switch-branches{position: absolute;width: 20px;height: 50px;background-color: #111;top:-50px;right:0;}
+.slotmachine-switch-on{position: absolute;  right: -8px;top: -140px;width: 36px;height: 100px;border-radius: 10px;border-radius: 10px;background-color: #262626;}
+#roll-slotmachine .modal-dialog{max-width: 522px;}
+.steam-item .opacity-b{background:#fff;opacity: 0.3;filter:alpha(opacity=30);display:none;}
+.steam-item.locked .opacity-b,.steam-item.sent .opacity-b{display: block;}
+.modal-footer .btn-roll{font-size:14px;}
+.roll-prize li p{margin-top:5px;}
+#infscr-loading{text-align:center;width:100%;display:inline-block;position:absolute;left:0;bottom:0;}
+#roll-steam-selected .steam-item{margin-right:7px;margin-bottom:7px;}
+.roll-room-list.en .roll-room-info .deep-gray{letter-spacing:-0.5px;}
+.roll-room-screen > li.dropdown.en .dropdown-menu>li>a{display:block;}
+.roll-room-screen > li.dropdown.en .dropdown-menu>li[role="presentation"]{width:100%;float:none;padding-left:0;}
+.roll-room-screen > li.dropdown.en .dropdown-menu{width:auto;left: -10px;}
+.roll-prize.roll-prize-poll.guest{background:url(../images/img/steam-grid.jpg);min-height: 62px;box-sizing:content-box;}
+
+.roll-room-content .steam-item{width: 49px;height: 34px;  margin: 2px 0 0 10px;}
+.roll-room-content .steam-item:first-child{margin-left: 0;}
+.roll-winning {display: inline-block;width: 142px;height: 83px;background-image: url(../images/img/roll-icon.png);background-repeat: no-repeat;background-position: -113px 0;position: absolute;left: 50px;top: 50px;}
+.tooltip-inner{background-color: #262626;}
+.tooltip.top .tooltip-arrow {border-top-color: #262626;}
+.bm-btn:before{display:inline-block;content:"";width:20px;height:20px;background:url(../images/img/roll-icon.png) no-repeat -184px -95px;vertical-align: middle;margin:-2px 5px 0 -25px;}
+.bm-btn:hover:before{background-position: -208px -95px;}
+.join-btn.bm-btn:before{margin:0 5px 0 0;background-position: -208px -95px;}
+.roll-microblog-item{display:inline-block;margin-right:20px;margin-bottom: 5px;width:302px;}
+svg{display: none;}
+#roll-steam-bag .isagree-item label{border:1px solid transparent;font-weight: 300;padding:0 5px;}
+#roll-steam-bag .isagree-item label.error{border:1px solid #a94442;}

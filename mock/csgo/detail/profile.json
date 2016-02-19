@@ -1,0 +1,12 @@
+{
+    "avatar": "http://lorempixel.com/30/30",
+    "name": "ysq1989",
+    "level": 1,
+    "guesses": 5,
+    "wins": 3,
+    "winRate": 60,
+    "income": {
+        "deco": 33.5,
+        "bean": 500
+    }
+}

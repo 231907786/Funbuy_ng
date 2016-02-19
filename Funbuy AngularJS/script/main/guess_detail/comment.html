@@ -1,0 +1,47 @@
+<div class="layout-right">
+    <div class="layout-right-tt">
+        达人评论
+        <div id="commentBtn" class="hide">
+            <button class="btn btn-express-comment" id="express">发表评论</button>
+        </div>
+        <div class="express-comment-textarea hides" id="express-textarea">
+            <textarea name="comment" class="form-control commentContent" id="commentContent" placeholder="最多输入200个字"></textarea>
+            <button type="button" id="express-submit" data-loading-text="发表中..." class="btn">发表</button>
+        </div>
+    </div>
+    <div id="comment">
+        <div id="yw0" class="list-view">
+            <ul class="express-comment-list">
+                <div class="items">
+                    <li ng-repeat="comment in comments">
+                        <div>
+                            <img ng-src="{{comment.user.imgSrc}}" width="30" height="30" class="express-comment-userimg" alt="{{comment.user.name}}">
+                            <span class="express-comment-time" ng-bind="comment.timeText"></span>
+                            <div class="express-comment-userdata">
+                                <p class="ellipsis">
+                                    <span class="roll-title roll-title-1" ng-bind="comment.user.title"></span>
+                                    <a href="http://dota2.vpgame.com/user/{{comment.user.id}}.html" class="express-listuser-name" title="{{comment.user.name}}" ng-bind="comment.user.name"></a>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="express-comment-content" ng-bind="comment.content"></p>
+                        <div class="text-right mr-5">
+                            <a style="cursor:pointer" ng-click="commentActions.zan(comment)" class="roll-zan ml-10 like-btn btn btn-link" title="送一个新鲜的奶酪" data-toggle="tooltip" data-placement="top"><i class="zan-icon"></i>(<span ng-bind="comment.zans"></span>)</a>
+                            <a style="cursor:pointer" ng-click="commentActions.step(comment)" class="roll-zan ml-10 like-btn btn btn-link " title="砸一个发霉的奶酪" data-toggle="tooltip" data-placement="top"><i class="step-icon"></i>(<span ng-bind="comment.steps"></span>)</a>
+                            <a style="cursor:pointer" ng-click="commentActions.report(comment)" class="roll-zan report  btn btn-link ">举报</a>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+            <hr>
+            <div class="pager">
+                <ul id="yw1">
+                    <li ng-repeat="pageNum in commentsPaginate.pages" ng-if="pageNum >= commentsPaginate.start && pageNum <= commentsPaginate.end" class="page" ng-class="{true: 'active'}[commentsPaginate.curPage == pageNum]">
+                        <a style="cursor:pointer;" ng-bind="pageNum" ng-click="commentsPaginate.go(pageNum)"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="keys" style="display:none" title="/guess/match-comment.html?id=147267&amp;clearCache=0"><span>368901</span><span>368831</span><span>368824</span><span>368817</span><span>368761</span></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+
+
+<div class="clearfix roll-hd">
+    <ul class="roll-room-screen">
+        <li class="roll-screen-item active">
+            <a href="javascript:void(0);" ng-click="greet({params:'sort=id_desc'})">最新</a>
+        </li>
+        <li class="roll-screen-item ">
+            <a href="javascript:void(0);" ng-click="greet({params:'sort=users_desc'})">最热</a>
+        </li>
+        <li class="dropdown ">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                会员头衔                        <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" ng-click="greet({params:'header_tag=1'})">竞技达人</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" ng-click="greet({params:'header_tag=2'})">职业队员</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" ng-click="greet({params:'header_tag=3'})">组织机构</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" ng-click="greet({params:'header_tag=4'})">电竞解说</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" ng-click="greet({params:'header_tag=5'})">竞猜明灯</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" ng-click="greet({params:'header_tag=7'})">土豪</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);" ng-click="greet({params:'header_tag=6'})">全部头衔</a></li>
+                <li class="caret"></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="pull-right">
+        <div class="mt-5">
+            <button class="btn btn-found-roll ml-10">创建ROLL活动</button>
+        </div>
+    </div>
+    <div class="roll-search-box">
+        <form id="search-form" action="#" method="get">
+            <input class="roll-room-search" name="Roll[w]" id="Roll_w" type="text" maxlength="45">
+            <button type="submit" class="btn-roll-search">
+            <i class="roll-search-icon"></i>
+        </button>
+        </form>            </div>
+</div>
+
+

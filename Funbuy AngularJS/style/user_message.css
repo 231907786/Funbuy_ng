@@ -1,0 +1,22 @@
+.radio_box{
+
+    float: left;
+}
+#User_gender input{
+    width: 25px;
+}
+#User_gender label:hover{
+    cursor: pointer;
+}
+#open_degree input{
+    margin-top: -5px;
+}
+#open_degree label:hover{
+    cursor: pointer;
+}
+#backpack_open_degree input{
+    margin-top: -5px;
+}
+#backpack_open_degree label:hover{
+    cursor: pointer;
+}

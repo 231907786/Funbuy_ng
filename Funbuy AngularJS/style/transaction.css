@@ -1,0 +1,11 @@
+.conserveMessage{
+    width: 200px;
+    height: 100px;
+    background-color: rgb(51,51,51);
+    border: 1px solid  rgb(102,102,102);
+    line-height: 100px;
+    text-align: center;
+    position: fixed;
+    left: 35%;
+    top: 55%;
+}

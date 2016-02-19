@@ -1,0 +1,7 @@
+.trade_record{
+    height:140px;
+    overflow: hidden;
+}
+.trade_record li{
+     height: 70px;
+ }

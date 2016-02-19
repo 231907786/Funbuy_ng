@@ -1,0 +1,82 @@
+<div id="spinach-box">
+    <ul class="nav-tabs">
+        <li ng-class="{0: 'active'}[header.state]">
+            <a ng-click="header.switchRecentHistory('0')" style="cursor:pointer">最近比赛</a>
+        </li>
+        <li ng-class="{1: 'active'}[header.state]">
+            <a ng-click="header.switchRecentHistory('1')" style="cursor:pointer">历史比赛</a>
+        </li>
+    </ul>
+    <div class="spinach-box">
+        <div id="yw1" class="list-view">
+            <div class="items" >
+                <a ng-repeat="match in matches" href="guess-match-{{match.id}}.html" title="{{match.title.text}}">
+                    <div class="spinach-item ">
+                        <div class="spinach-item-tt">
+                            <i ng-class="{0: 'basketball-icon', 1: 'dota2-icon'}[match.title.iconClass]"></i>
+                            <span class="spinach-league" ng-bind="match.title.text"></span>
+                            <span class="f-warning"><span class="f-warning" ng-bind="match.title.fwarning"></span></span>
+                            <div class="pull-right spinach-league-right">
+                                <span class="spinach-item-state" ng-class="{0: 'timewill', 1: 'going'}[match.time.state]" ng-bind="match.time.text"></span> 
+                                <i ng-show="match.time.state == 1" class="mins-icon"></i>
+                            </div>
+                        </div>
+                        <div class="spinach-item-content">
+                            <div class="spinach-item-in">
+                                <!-- teamA -->
+                                <div class="spinach-item-team pull-left">
+                                    <div class="spinach-item-img pull-right">
+                                        <img ng-src="{{match.teamA.imgSrc}}" alt="{{match.teamA.name}}" height="50" width="83">
+                                        <p class="text-center"><span ng-bind="match.teamA.winRate"></span>%</p>
+                                    </div>
+                                    <div class="spinach-item-data">
+                                        <p class="spinach-item-name">
+                                            <span class="ellipsis" title="{{match.teamA.name}}" ng-bind="match.teamA.name"></span>
+                                        </p>
+                                        <span class="spinach-odds">1 :&nbsp;<span ng-bind="match.teamA.odds"></span></span>
+                                    </div>
+                                </div>
+                                <!-- VS -->
+                                <div class="spinach-item-vs">
+                                    <div class="td">
+                                        <p>VS</p>
+                                        <span>BO<span ng-bind="match.rounds"></span></span>
+                                    </div>
+                                </div>
+                                <!-- teamB -->
+                                <div class="spinach-item-team pull-right">
+                                    <div class="spinach-item-img pull-left">
+                                        <img ng-src="{{match.teamB.imgSrc}}" alt="{{match.teamB.name}}" height="50" width="83">
+                                        <p class="text-center"><span ng-bind="match.teamB.winRate"></span>%</p>
+                                    </div>
+                                    <div class="spinach-item-data">
+                                        <p class="spinach-item-name">
+                                            <span class="ellipsis" title="{{match.teamB.name}}" ng-bind="match.teamB.name"></span>
+                                        </p>
+                                        <span class="spinach-odds">1 :&nbsp;<span ng-bind="match.teamB.odds"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spinach-league-img pull-right">
+                                <img ng-src="{{match.leagueImg}}" height="48" width="173">
+                                <b class="opacity-b"></b>
+                            </div>
+                        </div>
+                        <b class="opacity-b"></b>
+                    </div>
+                </a>
+
+            </div>
+            <div class="pager">
+                <ul id="yw2">
+                    <li class="previous" ng-show="paginate.curPage != 1"><a ng-click="paginate.go(paginate.curPage - 1)" style="cursor:pointer">&lt;上一页</a></li>
+                    <li ng-repeat="page in paginate.pages" class="page" ng-class="{true: 'active'}[($index + 1) === paginate.curPage]">
+                        <a ng-click="paginate.go($index + 1)" style="cursor:pointer">{{$index + 1}}</a>
+                    </li>
+                    <li class="next" ng-show="paginate.curPage < paginate.pages.length"><a ng-click="paginate.go(paginate.curPage + 1)" style="cursor:pointer">下一页&gt;</a></li>
+                </ul>
+            </div>
+            <div class="keys" style="display:none" title="/guess.html"><span>154862</span><span>154890</span><span>154869</span><span>154876</span><span>154883</span><span>154904</span><span>154939</span><span>154967</span><span>154995</span><span>155030</span></div>
+        </div>
+    </div>
+</div>

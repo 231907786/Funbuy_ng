@@ -1,0 +1,199 @@
+<!-- Project:Funbuy
+Author: yeshanqi
+Date:2016-02-18 -->
+<!DOCTYPE html>
+<html lang="zh_cn" ng-app="app">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>竞猜详情</title>
+	    <link rel="stylesheet" href="style/bootstrap.css">
+	    <link rel="stylesheet" href="style/base.css">
+	    <script src="jslib/jquery.min.js"></script>
+	    <script src="jslib/angular-1.4.9.js"></script>
+	    <script src="jslib/angular-ui-router.min.js"></script>
+	    <script src="jslib/angular-animate-1.4.9.js"></script>
+	    <script src="jslib/ui-bootstrap-custom-tpls-1.1.2.js"></script>
+	    <!--  -->
+	    <link rel="stylesheet" href="style/guess_detail.css">
+	    <script src="script/common/common.module.js"></script>
+	    <script type="text/javascript" src="jslib/bootstrap-datetimepicker.min.js"></script>
+		<script src="jslib/angular-animate-1.4.9.js"></script>
+		<script src="jslib/ui-bootstrap-custom-tpls-1.1.2.js"></script>
+
+	    <script src="script/core/core.module.js"></script>
+	    <script src="script/core/core.dataServer.js"></script>
+	    <script src="script/feature/feature.module.js"></script>
+	    <script src="script/layout/layout.module.js"></script>
+	    <script src="script/main/main.module.js"></script>
+	    <script src="script/widgets/widgets.module.js"></script>
+	    <script src="script/app.module.js"></script>
+	    <script src="script/main/guess_detail/guess_detail.js"></script>
+	    <script src="jslib/highcharts.js"></script>
+	</head>
+	<body>
+	    <div id="wraper" class="announcement" style="padding-top: 65px;">
+	        <div id="bodyer" class="mt-10 mb-40">
+	            <div class="container bodyer">
+	                <div class="common-breadcrumb">
+	                    <ul>
+	                        <li><a href="#">首页</a><em>&gt;</em></li>
+	                        <li class="active">
+	                            <a class="" href="#">竞猜</a><em>&gt;</em> </li>
+	                        <li class="active">
+	                            Starladder | i-League </li>
+	                    </ul>
+	                </div>
+	                <ul class="spinach-tap clearfix">
+	                    <li class="active">
+	                        <a href="">猜输赢  </a>
+	                    </li>
+	                    <li class="">
+	                        <a href="#">第一局10杀  </a>
+	                    </li>
+	                </ul>
+	                <div>
+	                    <div class="w-730 pull-left" ng-controller="guess.detail.leftCtrl">
+	                        <div ng-include="'script/main/guess_detail/spinach_corps.html'"></div>
+	                        <div id="spinach-live" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+	                            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+	                                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="twitchdotastar_English" aria-labelledby="ui-id-1" aria-selected="false"><a href="guess/match-live.html?id=100647" title="twitch:dotastar (English)" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">twitch:dotastar (English)</a></li>
+	                                <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="douyuTV-杰出_中文流" aria-labelledby="ui-id-2" aria-selected="true"><a href="guess/match-live.html?id=100640" title="douyuTV-杰出 (中文流)" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">douyuTV-杰出 (中文流)</a></li>
+	                            </ul>
+	                            <div id="twitchdotastar_English" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-1" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div>
+	                            <div id="douyuTV-杰出_中文流" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="true" aria-hidden="false">
+	                                <embed width="730" height="534" allownetworking="all" allowscriptaccess="always" src="http://staticlive.douyutv.com/common/share/play.swf?room_id=3258" quality="high" bgcolor="#000" wmode="window" allowfullscreen="true" allowfullscreeninteractive="true" type="application/x-shockwave-flash">
+	                            </div>
+	                        </div>
+	                        <div class="spinach-compare text-center">
+	                            <div class="spinach-compare-corps pull-left text-left">
+	                                <p class="ellipsis f-16 mb-10" title="{{spinachCorps.teamA.name}}">
+	                                    <img class="mr-10" ng-src="{{spinachCorps.teamA.imgSrc}}" width="50" height="30" alt="{{spinachCorps.teamA.name}}"><span ng-bind="spinachCorps.teamA.name"></span></p>
+	                                <ul class="spinach-compare-info">
+	                                    <li ng-repeat="game in spinachCorps.teamA.lastGames">
+	                                        <p>
+	                                            <span ng-bind="game.timeText"></span><span title="{{game.title}}" class="pull-right deep-gray spinach-game-name ellipsis" ng-bind="game.title"></span>
+	                                        </p>
+	                                        <p class="spinach-compare-vs">
+	                                            vs <img ng-src="{{game.rivalTeam.imgSrc}}" width="33" height="20" alt="{{game.rivalTeam.name}}">
+	                                            <span class="spinach-compare-smname ellipsis" ng-bind="game.rivalTeam.name"></span>
+	                                            <span class="spinach-compare-score" ng-class="{true: 'win', false: 'lose'}[game.win]" ng-bind="game.score"></span>
+	                                        </p>
+	                                    </li>
+	                                </ul>
+	                            </div>
+	                            <div class="compare-chart">
+	                                <p class="f-14">
+	                                    最近战绩对比 </p>
+	                                <div id="compare-chart" data-highcharts-chart="0">
+	                                    <div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 170px; height: 170px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+	                                        <svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="170" height="170">
+	                                            <desc>Created with Highcharts 4.0.3</desc>
+	                                            <defs>
+	                                                <clippath id="highcharts-1">
+	                                                    <rect x="0" y="0" width="150" height="145"></rect>
+	                                                </clippath>
+	                                            </defs>
+	                                            <rect x="0" y="0" width="170" height="170" strokeWidth="0" fill="#262626" class=" highcharts-background"></rect>
+	                                            <g class="highcharts-series-group" zIndex="3">
+	                                                <g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(10,10) scale(1 1)" style="">
+	                                                    <path fill="#333" d="M 74.98268777768591 -9.349998236982088 A 85 85 0 1 1 75.06768777041235 160.64997304920595 L 75 75.65 A 0 0 0 1 0 75 75.65 Z" stroke="#262626" stroke-width="2" stroke-linejoin="round" transform="translate(0,0)"></path>
+	                                                    <path fill="#1a1a1a" d="M 74.98268777768592 160.6499982369821 A 85 85 0 0 1 74.88193670526391 -9.349918006186542 L 75 75.65 A 0 0 0 0 0 75 75.65 Z" stroke="#262626" stroke-width="2" stroke-linejoin="round" transform="translate(0,0)"></path>
+	                                                </g>
+	                                                <g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(10,10) scale(1 1)"></g>
+	                                            </g>
+	                                            <g class="highcharts-data-labels highcharts-tracker" visibility="visible" zIndex="6" transform="translate(10,10) scale(1 1)" opacity="1" style="">
+	                                                <g zIndex="1" style="cursor:default;" transform="translate(99,66)">
+	                                                    <text x="3" zIndex="1" style="font-size:11px;color:#606060;fill:#606060;" y="16">
+	                                                        <tspan>50.0 %</tspan>
+	                                                    </text>
+	                                                </g>
+	                                                <g zIndex="1" style="cursor:default;" transform="translate(9,66)">
+	                                                    <text x="3" zIndex="1" style="font-size:11px;color:#606060;fill:#606060;" y="16">
+	                                                        <tspan>50.0 %</tspan>
+	                                                    </text>
+	                                                </g>
+	                                            </g>
+	                                            <g class="highcharts-legend" zIndex="7">
+	                                                <g zIndex="1">
+	                                                    <g></g>
+	                                                </g>
+	                                            </g>
+	                                            <g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" transform="translate(0,-9999)">
+	                                                <path fill="none" d="M 3 0 L 13 0 C 16 0 16 0 16 3 L 16 13 C 16 16 16 16 13 16 L 3 16 C 0 16 0 16 0 13 L 0 3 C 0 0 0 0 3 0" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></path>
+	                                                <path fill="none" d="M 3 0 L 13 0 C 16 0 16 0 16 3 L 16 13 C 16 16 16 16 13 16 L 3 16 C 0 16 0 16 0 13 L 0 3 C 0 0 0 0 3 0" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></path>
+	                                                <path fill="none" d="M 3 0 L 13 0 C 16 0 16 0 16 3 L 16 13 C 16 16 16 16 13 16 L 3 16 C 0 16 0 16 0 13 L 0 3 C 0 0 0 0 3 0" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></path>
+	                                                <path fill="rgba(249, 249, 249, .85)" d="M 3 0 L 13 0 C 16 0 16 0 16 3 L 16 13 C 16 16 16 16 13 16 L 3 16 C 0 16 0 16 0 13 L 0 3 C 0 0 0 0 3 0"></path>
+	                                                <text x="8" zIndex="1" style="font-size:12px;color:#333333;fill:#333333;" y="21"></text>
+	                                            </g>
+	                                        </svg>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="spinach-compare-corps pull-right text-left">
+	                                <p class="f-16 mb-10 text-right" title="{{spinachCorps.teamB.name}}">
+	                                    <span class="ellipsis spinach-compare-name" ng-bind="spinachCorps.teamB.name"></span><img class="ml-10" ng-src="{{spinachCorps.teamB.imgSrc}}" width="50" height="30" alt="{{spinachCorps.teamB.name}}">
+	                                </p>
+	                                <ul class="spinach-compare-info text-left">
+	                                    <li ng-repeat="game in spinachCorps.teamB.lastGames">
+	                                        <p>
+	                                            <span ng-bind="game.timeText"></span><span title="{{game.title}}" class="pull-right deep-gray spinach-game-name ellipsis" ng-bind="game.title"></span>
+	                                        </p>
+	                                        <p class="spinach-compare-vs">
+	                                            <img ng-src="{{game.rivalTeam.imgSrc}}" width="33" height="20" alt="{{game.rivalTeam.name}}">
+	                                            <span class="spinach-compare-smname ellipsis" ng-bind="game.rivalTeam.name"></span>
+	                                            <span class="spinach-compare-score" ng-class="{true: 'win', false: 'lose'}[game.win]" ng-bind="game.score"></span> vs
+	                                        </p>
+	                                    </li>
+	                                </ul>
+	                            </div>
+	                        </div>
+	                        <div ng-include="'script/main/guess_detail/spinach_records.html'"></div>
+	                    </div>
+	                    <div class="w-320 pull-right" ng-controller="guess.detail.rightCtrl">
+	                        <div ng-include="'script/main/guess_detail/mybets.html'"></div>
+	                        <div style="margin-top:10px;" ng-include="'script/main/guess_detail/comment.html'"></div>
+	                        <div class="layout-right">
+	                            <h5 class="layout-right-tt">土豪排行榜</h5>
+	                            <ul class="richest-wall-list">
+	                                <li ng-repeat="user in richests" ng-class="{true:'active'}[$first]">
+	                                    <div class="layout-content">
+	                                        <p>
+	                                            <span class="spinach-list-caret" ng-bind="$index + 1"></span>
+	                                            <a class="ellipsis f-14" title="{{user.name}}" href="user/{{user.id}}.html" ng-bind="user.name"></a> <span class="level-9">LV<span ng-bind="user.level"></span></span>
+	                                            <span class="pull-right f-16" ng-bind="user.wealth">933.72</span>
+	                                        </p>
+	                                        <div class="spinach-article hides">
+	                                            <div class="spinach-article-in">
+	                                                <div ng-repeat="item in user.items" class="steam-item qualitly-unique">
+	                                                    <a target="_blank" href="market-sell-{{item.id}}.html" title="{{item.name}}">
+	                                                        <img ng-src="{{item.imgSrc}}" width="68" height="48" alt="{{item.name}}">
+	                                                        <span class="rarity-box" ng-class="{'common': 'rarity-common', 'rare': 'rarity-rare', 'mythical': 'rarity-mythical', 'uncommon': 'rarity-uncommon', 'legendary': 'rarity-legendary', 'arcana': 'rarity-arcana', 'immortal': 'rarity-immortal', }[item.rarity]" ng-bind="item.rarity|rarityText"></span>
+	                                                    </a>
+	                                                </div>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                </li>
+	                                
+	                            </ul>
+	                        </div>
+	                        <div class="layout-right">
+	                            <div class="layout-right-tt">竞猜帮助</div>
+	                            <div class="layout-betfaq">
+	                                <a href="#" title="竞猜教程">竞猜教程</a>
+	                                <a href="#" title="存取教程">存取教程</a>
+	                                <a href="#" title="交易报价处理">交易报价处理</a>
+	                                <a href="#" title="常见FAQ">常见FAQ</a>
+	                                <a href="#" title="P豆指南">P豆指南</a>
+	                                <a href="#" title="Steam介绍">Steam介绍</a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        
+	    </div>
+	    <div id="scroll-up"><i class="scroll-up-icon"></i></div>
+	</body>
+</html>

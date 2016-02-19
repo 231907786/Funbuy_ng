@@ -1,0 +1,212 @@
+<!-- Project:Funbuy
+Author: yeshanqi
+Date:2016-02-18 -->
+<!DOCTYPE html>
+<html lang="zh_cn" ng-app="app">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>csgo竞猜首页</title>
+	    <link rel="stylesheet" href="style/bootstrap.css">
+	    <script src="jslib/jquery.min.js"></script>
+	    <script src="jslib/angular-1.4.9.js"></script>
+	    <script src="jslib/angular-ui-router.min.js"></script>
+	    <script src="jslib/angular-animate-1.4.9.js"></script>
+	    <script src="jslib/ui-bootstrap-custom-tpls-1.1.2.js"></script>
+	    <!--  -->
+	    <link rel="stylesheet" type="text/css" href="style/public.css">
+	    <link rel="stylesheet" type="text/css" href="style/quiz.css">
+	    <link rel="stylesheet" type="text/css" href="style/iconfont.css">
+	    <script src="script/common/common.module.js"></script>
+	    <script src="script/core/core.module.js"></script>
+	    <script src="script/core/core.dataServer.js"></script>
+	    <script src="script/feature/feature.module.js"></script>
+	    <script src="script/layout/layout.module.js"></script>
+	    <script src="script/main/main.module.js"></script>
+	    <script src="script/widgets/widgets.module.js"></script>
+	    <script src="script/app.module.js"></script>
+	    <script src="script/main/csgo_index/csgo_index.js"></script>
+	</head>
+	<body>
+	    <div id="wrap">
+	        <div id="bodyer">
+	            <div class="quiz-container clearfix">
+	                <div class="quiz-left" ng-controller="csgo.index.leftCtrl">
+	                    <div class="quiz-left-top">
+	                        <ul>
+	                            <li class="nav-all first nav-category" ng-class="{'active': category === 'all'}">
+	                                <a style="cursor:pointer;" ng-click="changeCategory('all')">
+	                                    <div>所有比赛</div>
+	                                </a>
+	                            </li>
+	                            <li class="nav-dota nav-category" ng-class="{'active': category === 'dota'}">
+	                                <a style="cursor:pointer;" ng-click="changeCategory('dota')">
+	                                    <div><i></i>DOTA2</div>
+	                                </a>
+	                            </li>
+	                            <li class="nav-sport nav-category" ng-class="{'active': category === 'sports'}">
+	                                <a style="cursor:pointer;" ng-click="changeCategory('sports')">
+	                                    <div><i></i>体育赛事</div>
+	                                </a>
+	                            </li>
+	                            <li class="nav-csgo nav-category" ng-class="{'active': category === 'csgo'}">
+	                                <a style="cursor:pointer;" ng-click="changeCategory('csgo')">
+	                                    <div><i></i>CSGO</div>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                    <div class="list-nav">
+	                        <div class="list-nav-top">
+	                            <ul>
+	                                <li class="list-all first">
+	                                    <a style="cursor:pointer;" ng-click="changeMatchState('normal')" ng-class="{'green': state === 'normal'}">
+	                                        <div>全部</div>
+	                                    </a>
+	                                </li>
+	                                <li class="list-none">
+	                                    <a style="cursor:pointer;" ng-click="changeMatchState('open')" ng-class="{'green': state === 'open'}">
+	                                        <div>未开始</div>
+	                                    </a>
+	                                </li>
+	                                <li class="list-ing">
+	                                    <a style="cursor:pointer;" ng-click="changeMatchState('start')" ng-class="{'green': state === 'start'}">
+	                                        <div>进行中</div>
+	                                    </a>
+	                                </li>
+	                                <li class="list-over">
+	                                    <a style="cursor:pointer;" ng-click="changeMatchState('close')" ng-class="{'green': state === 'close'}">
+	                                        <div>已结束</div>
+	                                    </a>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                    <div class="quiz-list">
+	                        <div id="quiz-list">
+	                            <ul ng-if="matches.length > 0">
+	                                <li ng-repeat="match in matches">
+	                                    <a href="match/{{match.id}}.html">
+	                                        <div class="nav-list-head">
+	                                            <div class="nav-list-head-left">
+	                                                <i class="csgo-icon"></i>
+	                                                <span class="tournament-name pull-left">{{match.name}} -{{match.patternText}}</span>
+	                                            </div>
+	                                            <div class="nav-list-head-right status-normal">{{match.stateText}}</div>
+	                                        </div>
+	                                        <div class="nav-list-body">
+	                                            <div class="spinach-item">
+	                                                <div class="spinach-item-team pull-left">
+	                                                    <div class="spinach-item-img pull-right">
+	                                                        <img ng-src="{{match.teamA.logo}}" alt="{{match.teamA.name}}" height="55" width="91">
+	                                                        <i class="spinach-status-win" ng-show="match.teamA.win"></i>
+	                                                    </div>
+	                                                    <div class="spinach-item-data">
+	                                                        <p class="spinach-item-name">
+	                                                            <span class="ellipsis spinach-name-length" title="{{match.teamA.name}}">{{match.teamA.name}}</span>
+	                                                        </p>
+	                                                        <span class="spinach-odds">1 : {{match.teamA.odds}}</span>
+	                                                    </div>
+	                                                </div>
+	                                                <div class="spinach-item-vs">
+	                                                    <div class="td">
+	                                                        <p class="spinach-item-score">{{match.score}}</p>
+	                                                        <p class="spinach-item-bo">BO{{match.rounds}}</p>
+	                                                    </div>
+	                                                </div>
+	                                                <div class="spinach-item-team pull-right">
+	                                                    <div class="spinach-item-img pull-left">
+	                                                        <img ng-src="{{match.teamB.logo}}" alt="{{match.teamB.name}}" height="55" width="91">
+	                                                        <i class="spinach-status-win" ng-show="match.teamB.win"></i>
+	                                                    </div>
+	                                                    <div class="spinach-item-data">
+	                                                        <p class="spinach-item-name">
+	                                                            <span class="ellipsis spinach-name-length" title="{{match.teamB.name}}">{{match.teamB.name}}</span>
+	                                                        </p>
+	                                                        <span class="spinach-odds">1 : {{match.teamB.odds}}</span>
+	                                                    </div>
+	                                                </div>
+	                                            </div>
+	                                            <div class="spinach-league-img">
+	                                                <img ng-src="{{match.leagueLogo}}" alt="{{match.name}}" height="99" width="220">
+	                                                <b class="opacity-b"></b>
+	                                            </div>
+	                                        </div>
+	                                    </a>
+	                                </li>
+	                            </ul>
+	                            <div ng-if="!matches.length" class="no-list">
+	                                <p class="no-list-sorry">抱歉，比赛正在添加</p>
+	                                <p class="no-list-other">小编正在拼命添加比赛，可以先看看其他比赛</p>
+	                                <i></i>
+	                                <div class="nolist-text">常来Funbuy玩哦！</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="quiz-right" ng-controller="csgo.index.rightCtrl">
+	                    <div class="quiz-right-top">
+	                        <div class="quiz-bd">
+	                            <div class=""><i class="blue-round"></i>周明灯榜</div>
+	                        </div>
+	                        <div class="light-rank">
+	                            <ul class="ulbg" id="light-list">
+	                                <!-- //@dev -->
+	                                <li ng-repeat="user in lights" class="guess-rank-media" ng-class="{'even': $odd}" data-list="{{$index + 1}}">
+	                                    <div class="media-left media-middle">
+	                                        <span class="guess-rank-list">{{$index + 1}}</span>
+	                                    </div>
+	                                    <div class="media-left media-middle">
+	                                        <img class="guess-rank-avatar" ng-src="{{user.image}}" alt="{{user.name}}" height="42" width="42">
+	                                    </div>
+	                                    <div class="media-body">
+	                                        <div class="guess-rank-content">
+	                                            <div class="mb5">
+	                                                <span class="pull-right ml10">{{user.winRate}}%&nbsp;win</span>
+	                                                <h4 class="media-heading ellipsis">
+	                                                    <span title="{{user.name}}">{{user.name}}</span>
+	                                                </h4>
+	                                            </div>
+	                                            <span class="pull-right">{{user.score}}&nbsp;P</span>
+	                                            <span class="level-{{user.level}}"></span>
+	                                        </div>
+	                                    </div>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                    <div class="quiz-right-foot">
+	                        <div class="quiz-bs">
+	                            <i class="blue-round"></i>
+	                            <div>周黑灯榜</div>
+	                        </div>
+	                        <div class="">
+	                            <ul class="ulbg" id="god-list">
+	                                <li ng-repeat="user in darks" ng-class="{'even': $odd}" class="guess-rank-media" data-list="{{$index + 1}}">
+	                                    <div class="media-left media-middle">
+	                                        <span class="guess-rank-list">{{$index + 1}}</span>
+	                                    </div>
+	                                    <div class="media-left media-middle">
+	                                        <img class="guess-rank-avatar" ng-src="{{user.image}}" alt="{{user.name}}" height="42" width="42">
+	                                    </div>
+	                                    <div class="media-body">
+	                                        <div class="guess-rank-content">
+	                                            <div class="mb5">
+	                                                <span class="pull-right ml10">{{user.winRate}}%&nbsp;win</span>
+	                                                <h4 class="media-heading ellipsis">
+	                                                    <span title="{{user.name}}">{{user.name}}</span>
+	                                                </h4>
+	                                            </div>
+	                                            <span class="pull-right">{{user.score}}&nbsp;P</span>
+	                                            <span class="level-{{user.level}}"></span>
+	                                        </div>
+	                                    </div>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</body>
+</html>

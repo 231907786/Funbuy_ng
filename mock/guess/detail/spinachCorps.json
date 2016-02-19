@@ -1,0 +1,100 @@
+{
+    "header": {
+        "count": 58527,
+        "startTime": "2016-01-13 17:55:00",
+        "stateText": "已结算"
+    },
+    "teamA": {
+        "win": true,
+        "name": "LGD-GAMING",
+        "winRate": 60,
+        "imgSrc": "images/team-logo-3.png",
+        "odds": 0.46,
+        "lastGames": [{
+            "timeText": "3 周前",
+            "title": "上海特级锦标赛",
+            "win": true,
+            "score": "2-0",
+            "rivalTeam": {
+                "name": "IG.vitality",
+                "imgSrc": "images/ig-v.jpg"
+            }
+        }, {
+            "timeText": "3 周前",
+            "title": "上海特级锦标赛",
+            "win": false,
+            "score": "0-2",
+            "rivalTeam": {
+                "name": "IG.vitality",
+                "imgSrc": "images/ig-v.jpg"
+            }
+        }, {
+            "timeText": "3 周前",
+            "title": "上海特级锦标赛",
+            "win": true,
+            "score": "2-0",
+            "rivalTeam": {
+                "name": "IG.vitality",
+                "imgSrc": "images/ig-v.jpg"
+            }
+        }, {
+            "timeText": "3 周前",
+            "title": "上海特级锦标赛",
+            "win": true,
+            "score": "2-0",
+            "rivalTeam": {
+                "name": "IG.vitality",
+                "imgSrc": "images/ig-v.jpg"
+            }
+        }]
+    },
+    "teamB": {
+        "win": false,
+        "name": "Fnatic",
+        "winRate": 40,
+        "imgSrc": "images/team-logo-4.png",
+        "odds": 1.94,
+        "lastGames": [{
+            "timeText": "3 周前",
+            "title": "上海特级锦标赛",
+            "win": true,
+            "score": "0-2",
+            "rivalTeam": {
+                "name": "MVP Phoenix",
+                "imgSrc": "images/mvp.png"
+            }
+        }, {
+            "timeText": "3 周前",
+            "title": "上海特级锦标赛",
+            "win": true,
+            "score": "0-2",
+            "rivalTeam": {
+                "name": "MVP Phoenix",
+                "imgSrc": "images/mvp.png"
+            }
+        }, {
+            "timeText": "3 周前",
+            "title": "上海特级锦标赛",
+            "win": true,
+            "score": "0-2",
+            "rivalTeam": {
+                "name": "MVP Phoenix",
+                "imgSrc": "images/mvp.png"
+            }
+        }, {
+            "timeText": "3 周前",
+            "title": "上海特级锦标赛",
+            "win": false,
+            "score": "2-1",
+            "rivalTeam": {
+                "name": "MVP Phoenix",
+                "imgSrc": "images/mvp.png"
+            }
+        }]
+    },
+    "score": "2:0",
+    "rounds": 3,
+    "guess": {
+        "state": 0
+    }
+}

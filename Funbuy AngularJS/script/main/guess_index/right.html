@@ -1,0 +1,72 @@
+<div class="layout-right">
+    <ul class="nav-tabs nav-right-tabs" style="margin-top:0;">
+        <li role="presentation" ng-class="{true: 'active'}[top.curTab === 0]"><a style="cursor:pointer" aria-expanded="true" ng-click="top.changeTab('0')" aria-controls="lighthouses" role="tab" data-events="hover" data-toggle="tab">周明灯榜</a></li>
+        <li role="presentation" ng-class="{true: 'active'}[top.curTab === 1]"><a style="cursor:pointer" aria-expanded="false" ng-click="top.changeTab('1')" aria-controls="darkhouses" data-events="hover" role="tab" data-toggle="tab">周黑灯榜</a></li>
+    </ul>
+    <div class="tab-content">
+        <ul role="tabpanel" class="spinach-list tab-pane active" id="lighthouses">
+            <li ng-repeat="user in top.arr">
+                <div class="spinach-list-content">
+                    <div class="spinach-list-text">
+                        <div class="spinach-list-img">
+                            <a href="user/{{user.id}}.html" title="{{user.name}}">
+                                <img class="pull-left" ng-src="{{user.imgSrc}}" alt="{{user.name}}" height="50" width="50"> 
+                                <b></b>
+                            </a>
+                        </div>
+                        <div class="spinach-list-info">
+                            <div class="mb-5">
+                                <span class="pull-right">{{user.winRate}}%win</span>
+                                <p class="ellipsis spinach-list-name">
+                                    <span class="spinach-list-caret">{{$index + 1}}</span>
+                                    <a ng-bind="user.name" href="user/{{user.id}}.html" title="{{user.name}}"></a>
+                                </p>
+                            </div>
+                            <p>
+                                <span class="level-9">Lv<span ng-bind="user.level"></span> </span>
+                                <span class="pull-right" ng-bind="user.bottomText"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="layout-right">
+    <h5 class="layout-right-tt">
+        菠神榜
+        <span class="f-danger f-12 new-modules">new</span>
+        <i data-original-title="菠神指数是玩家比赛竞猜准确度和收益率的综合水平值，玩家菠神指数越高，预测能力越接近神！" class="explain-icon" title=""></i>
+    </h5>
+    <div id="yw3" class="list-view">
+        <ul class="spinach-list">
+            <li ng-repeat="user in bottom">
+                <div class="spinach-list-content">
+                    <div class="spinach-list-text">
+                        <div class="spinach-list-img">
+                            <a href="user/{{user.id}}.html" title="{{user.name}}">
+                                <img ng-src="{{user.imgSrc}}" alt="{{user.name}}" height="50" width="50">
+                                <b></b>
+                            </a>
+                        </div>
+                        <div class="spinach-list-info">
+                            <div class="mb-5">
+                                <span class="pull-right">菠神指数</span>
+                                <p class="ellipsis spinach-list-name">
+                                    <span class="spinach-list-caret">{{$index + 1}}</span>
+                                    <a href="user/{{user.id}}.html" title="{{user.name}}" ng-bind="user.name"></a>
+                                </p>
+                            </div>
+                            <p>
+                                <span class="level-9">Lv<span ng-bind="user.level"></span></span>
+                                <span class="pull-right">{{user.score}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="keys" style="display:none" title="/guess.html"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+</div>

@@ -1,0 +1,256 @@
+{
+    "matches": [{
+        "id": "12116",
+        "title": {
+            "iconClass": 1,
+            "text": "dota2",
+            "fwarning": ""
+        },
+        "time": {
+            "state": 0,
+            "text": "未开始"
+        },
+        "teamA": {
+            "name": "Aliance",
+            "imgSrc": "images/team-logo-7.png",
+            "odds": "1.86",
+            "winRate": 51
+        },
+        "teamB": {
+            "name": "EHOME",
+            "imgSrc": "images/team-logo-4.png",
+            "odds": "1.13",
+            "winRate": 49
+        },
+        "rounds": 1,
+        "leagueImg": "images/league-1.png"
+    }, {
+        "id": "15462",
+        "title": {
+            "iconClass": 1,
+            "text": "dota2",
+            "fwarning": ""
+        },
+        "time": {
+            "state": 2,
+            "text": "已结束"
+        },
+        "teamA": {
+            "name": "LGD",
+            "imgSrc": "images/team-logo-4.png",
+            "odds": "1.05",
+            "winRate": 65
+        },
+        "teamB": {
+            "name": "NAVI",
+            "imgSrc": "images/team-logo-6.png",
+            "odds": "1.14",
+            "winRate": 35
+        },
+        "rounds": 1,
+        "leagueImg": "images/league-1.png"
+    }, {
+        "id": "14367",
+        "title": {
+            "iconClass": 1,
+            "text": "dota2",
+            "fwarning": ""
+        },
+        "time": {
+            "state": 0,
+            "text": "未开始"
+        },
+        "teamA": {
+            "name": "EHOME",
+            "imgSrc": "images/team-logo-6.png",
+            "odds": "1.91",
+            "winRate": 41
+        },
+        "teamB": {
+            "name": "FTD",
+            "imgSrc": "images/team-logo-3.png",
+            "odds": "0.47",
+            "winRate": 59
+        },
+        "rounds": 5,
+        "leagueImg": "images/league-1.png"
+    }, {
+        "id": "18898",
+        "title": {
+            "iconClass": 0,
+            "text": "NBA",
+            "fwarning": "[ 猛龙 - 7.5 ]"
+        },
+        "time": {
+            "state": 2,
+            "text": "已结束"
+        },
+        "teamA": {
+            "name": "爵士",
+            "imgSrc": "images/team-logo-7.png",
+            "odds": "1.29",
+            "winRate": 67
+        },
+        "teamB": {
+            "name": "快船",
+            "imgSrc": "images/team-logo-4.png",
+            "odds": "0.95",
+            "winRate": 33
+        },
+        "rounds": 3,
+        "leagueImg": "images/league-2.png"
+    }, {
+        "id": "11765",
+        "title": {
+            "iconClass": 0,
+            "text": "NBA",
+            "fwarning": "[ 猛龙 - 7.5 ]"
+        },
+        "time": {
+            "state": 2,
+            "text": "已结束"
+        },
+        "teamA": {
+            "name": "爵士",
+            "imgSrc": "images/team-logo-4.png",
+            "odds": "0.5",
+            "winRate": 56
+        },
+        "teamB": {
+            "name": "猛龙",
+            "imgSrc": "images/team-logo-6.png",
+            "odds": "0.21",
+            "winRate": 44
+        },
+        "rounds": 3,
+        "leagueImg": "images/league-2.png"
+    }, {
+        "id": "18196",
+        "title": {
+            "iconClass": 1,
+            "text": "dota2",
+            "fwarning": ""
+        },
+        "time": {
+            "state": 2,
+            "text": "已结束"
+        },
+        "teamA": {
+            "name": "CLOUD9",
+            "imgSrc": "images/team-logo-2.png",
+            "odds": "0.42",
+            "winRate": 30
+        },
+        "teamB": {
+            "name": "Empire",
+            "imgSrc": "images/team-logo-4.png",
+            "odds": "0.22",
+            "winRate": 70
+        },
+        "rounds": 3,
+        "leagueImg": "images/league-1.png"
+    }, {
+        "id": "19696",
+        "title": {
+            "iconClass": 0,
+            "text": "NBA",
+            "fwarning": "[ 猛龙 - 7.5 ]"
+        },
+        "time": {
+            "state": 2,
+            "text": "已结束"
+        },
+        "teamA": {
+            "name": "太阳",
+            "imgSrc": "images/team-logo-2.png",
+            "odds": "1.93",
+            "winRate": 35
+        },
+        "teamB": {
+            "name": "热火",
+            "imgSrc": "images/team-logo-6.png",
+            "odds": "0.54",
+            "winRate": 65
+        },
+        "rounds": 1,
+        "leagueImg": "images/league-2.png"
+    }, {
+        "id": "11376",
+        "title": {
+            "iconClass": 0,
+            "text": "NBA",
+            "fwarning": "[ 猛龙 - 7.5 ]"
+        },
+        "time": {
+            "state": 2,
+            "text": "已结束"
+        },
+        "teamA": {
+            "name": "猛龙",
+            "imgSrc": "images/team-logo-4.png",
+            "odds": "1.91",
+            "winRate": 63
+        },
+        "teamB": {
+            "name": "爵士",
+            "imgSrc": "images/team-logo-7.png",
+            "odds": "0.15",
+            "winRate": 37
+        },
+        "rounds": 1,
+        "leagueImg": "images/league-2.png"
+    }, {
+        "id": "11394",
+        "title": {
+            "iconClass": 1,
+            "text": "dota2",
+            "fwarning": ""
+        },
+        "time": {
+            "state": 1,
+            "text": "进行中"
+        },
+        "teamA": {
+            "name": "LGD",
+            "imgSrc": "images/team-logo-7.png",
+            "odds": "0.59",
+            "winRate": 32
+        },
+        "teamB": {
+            "name": "VP",
+            "imgSrc": "images/team-logo-2.png",
+            "odds": "1.63",
+            "winRate": 68
+        },
+        "rounds": 5,
+        "leagueImg": "images/league-1.png"
+    }, {
+        "id": "17367",
+        "title": {
+            "iconClass": 1,
+            "text": "dota2",
+            "fwarning": ""
+        },
+        "time": {
+            "state": 0,
+            "text": "未开始"
+        },
+        "teamA": {
+            "name": "CLOUD9",
+            "imgSrc": "images/team-logo-4.png",
+            "odds": "0.59",
+            "winRate": 70
+        },
+        "teamB": {
+            "name": "NAVI",
+            "imgSrc": "images/team-logo-3.png",
+            "odds": "0.39",
+            "winRate": 30
+        },
+        "rounds": 1,
+        "leagueImg": "images/league-1.png"
+    }],
+    "config": {
+        "totalSize": 60
+    }
+}

@@ -1,0 +1,242 @@
+<div class="spinach-corps">
+    <div class="spinach-item-tt">
+        <i class="dota2-icon"></i>
+        <span class="deep-gray mr-5">押注了</span><span ng-bind="spinachCorps.header.count"></span><span class="deep-gray mr-5 ml-5">个饰品</span>
+        <p class="pull-right"><span class="mr-5">比赛开始时间:<span ng-bind="spinachCorps.header.startTime"></span></span>
+            <span class="" ng-bind="spinachCorps.header.stateText"></span></p>
+    </div>
+    <div class="text-center pt-10">
+    </div>
+    <div class="spinach-corps-box text-center">
+        <div class="spinach-corps-item pull-left text-right" ng-class="{0: 'active'}[spinachPick.state]">
+            <div class="spinach-corps-img pull-right">
+                <i ng-show="spinachCorps.teamA.win" class="spinach-status-win"></i>
+                <img ng-src="{{spinachCorps.teamA.imgSrc}}" width="133" height="80" alt="{{spinachCorps.teamA.name}}">
+                <b class="opacity-b"></b>
+                <p class="text-center f-14 mt-5"><span ng-bind="spinachCorps.teamA.winRate"></span>%</p>
+            </div>
+            <div class="spinach-corps-data">
+                <p class="spinach-corps-name ellipsis" title="{{spinachCorps.teamA.name}}"><span ng-bind="spinachCorps.teamA.name"></span></p>
+                <p class="low mt-5 f-14">
+                    <span class="vp-item-odds" ng-bind="spinachCorps.teamA.odds"></span>
+                    <span class="vp-gold-odds hides" ng-bind="spinachCorps.teamA.odds"></span>
+                </p>
+            </div>
+        </div>
+        <div class="spinach-corps-vs">
+            <div class="td">
+                <span class="spinach-team-score" ng-bind="spinachCorps.score"></span>
+                <p class="f-12">VS</p>
+                <span class="f-14">BO<span ng-bind="spinachCorps.rounds">1</span></span>
+            </div>
+        </div>
+        <div class="spinach-corps-item pull-right text-left" ng-class="{1: 'active'}[spinachPick.state]">
+            <div class="spinach-corps-img pull-left">
+                <i ng-show="spinachCorps.teamB.win" class="spinach-status-win"></i>
+                <img ng-src="{{spinachCorps.teamB.imgSrc}}" width="133" height="80" alt="{{spinachCorps.teamB.name}}">
+                <b class="opacity-b"></b>
+                <p class="text-center f-14 mt-5"><span ng-bind="spinachCorps.teamB.winRate"></span>%</p>
+            </div>
+            <div class="spinach-corps-data">
+                <p class="spinach-corps-name ellipsis" title="{{spinachCorps.teamB.name}}" ng-bind="spinachCorps.teamB.name"></p>
+                <p class="high mt-5 f-14">
+                    <span class="vp-item-odds" ng-bind="spinachCorps.teamB.odds"></span>
+                    <span class="vp-gold-odds hides" ng-bind="spinachCorps.teamB.odds"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="pick-type-box">
+        <ul>
+            <li class="spinach-corps-item pull-left text-right" ng-class="{0: 'active'}[spinachCorps.guess.state]">
+                <a style="cursor:pointer;" ng-click="spinachCorps.guess.click(0)" class="pick-type tap-memory"><i class="itembet-icon"></i>饰品竞猜</a>
+            </li>
+            <li class="spinach-corps-item pull-right text-left" ng-class="{1: 'active'}[spinachCorps.guess.state]">
+                <a style="cursor:pointer;" ng-click="spinachCorps.guess.click(1)" class="pick-type tap-memory"><i class="vb-icon"></i>P豆竞猜</a>
+            </li>
+        </ul>
+    </div>
+    <div class="spinach-pick">
+        <ul ng-cloak class="spinach-pick-nav text-center">
+            <li ng-click="spinachPick.pick(0)" ng-class="{0: 'active'}[spinachPick.state]">
+                <a class="low-bg select-team team-a">
+                    我猜{{spinachCorps.teamA.name}}赢
+                    <b class="caret"></b>
+                </a>
+            </li>
+            <li ng-click="spinachPick.pick(1)" ng-class="{1: 'active'}[spinachPick.state]">
+                <a class="high-bg select-team team-b">
+                    我猜{{spinachCorps.teamB.name}}赢
+                    <b class="caret"></b>
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content" id="pick">
+            <div class="tab-pane" ng-show="spinachCorps.guess.state === 0" id="itembet" style="display:block;">
+                <div ng-cloak class="spinach-pick-data">
+                    <div class="tables spinach-pick-odds">
+                        <div class="tr ">
+                            <div class="td text-right">
+                                {{spinachCorps.teamA.name}} 赔率 </div>
+                            <div class="td">
+                                1 : {{spinachCorps.teamA.odds}} </div>
+                            <div class="td text-right">
+                                {{spinachCorps.teamB.name}} 赔率 </div>
+                            <div class="td">
+                                1 : {{spinachCorps.teamB.odds}} </div>
+                        </div>
+                        <div class="tr">
+                            <div class="td text-right">
+                                可能获得 </div>
+                            <div class="td">
+                                <span>0.00</span> 赔 <span>0.00</span> </div>
+                            <div class="td text-right">
+                                可能获得 </div>
+                            <div class="td">
+                                <span>0.00</span> 赔 <span>0.00</span> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spinach-itembet-box" ng-show="spinachPick.state !== -1">
+                    <div class="alert alert-warning">
+                        注意:请先阅读竞猜规则，竞猜后视为您同意遵守本规则。<a href="/help/new.html?id=337&amp;lang=zh_cn" target="_blank">点击查看</a> </div>
+                    <form id="guess-item-form">
+                        <div id="article-selected" class="article-selected text-center">
+                        </div>
+                        <input type="hidden" value="10275" name="team_id" id="team_id"> </form>
+                    <div id="guess" class="ui-tabs ui-widget ui-widget-content ui-corner-all ui-tabs-collapsible">
+                        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                            <li class="ui-state-default ui-corner-top" ng-class="{'ui-tabs-active ui-state-active': inventory.tabState === 0}" tabindex="0"><a style="cursor:pointer;" ng-click="inventory.changeTab(0)" title="#user-inventory" class="ui-tabs-anchor" tabindex="-1" id="ui-id-1">本地库存</a></li>
+                            <li class="ui-state-default ui-corner-top" ng-class="{'ui-tabs-active ui-state-active': inventory.tabState === 1}" tabindex="-1"><a style="cursor:pointer;" ng-click="inventory.changeTab(1)" title="#steam-inventory" class="ui-tabs-anchor" tabindex="-1" id="ui-id-2">Steam库存</a></li>
+                        </ul>
+                        <div ng-cloak ng-show="inventory.tabState === 0" id="user-inventory" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+                            <div class="tab-pane">
+                                <div id="yw0" class="list-view">
+                                    <form id="user-bag-form" action="/user/inventory.html" method="post">
+                                        <div class="bag-type">
+                                            <p class="bag-type-data pull-left">
+                                                <span class="mr-25">饰品数（0）</span>
+                                            </p>
+                                            <ul class="screen-type">
+                                                <li><a class="ajax-sort">按价格<span class="glyphicon glyphicon-arrow-down"></span></a></li>
+                                                <li><a class="ajax-sort">按时间<span class="glyphicon glyphicon-arrow-down"></span></a></li>
+                                            </ul>
+                                            <div class="pull-right bag-select">
+                                                <div class="btn-group bootstrap-select" ng-class="{'open': itemBag.type.showOptions}">
+                                                    <button type="button" class="btn dropdown-toggle selectpicker btn-default" title="{{itemBag.type.currentText}}" ng-click="itemBag.type.showOptions = !itemBag.type.showOptions"><span class="filter-option pull-left">{{itemBag.type.currentText}}</span>&nbsp;<span class="caret"></span></button>
+                                                    <div class="dropdown-menu open">
+                                                        <ul class="dropdown-menu inner selectpicker">
+                                                            <li ng-repeat="option in itemBag.type.options" ng-class="{'selected': itemBag.type.currentIndex == $index}">
+                                                                <a ng-click="itemBag.type.choose($index)">
+                                                                    <span class="text">{{option}}</span>
+                                                                    <span class="glyphicon glyphicon-ok check-mark"></span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="btn-group bootstrap-select" ng-class="{'open': itemBag.rarity.showOptions}">
+                                                    <button type="button" class="btn dropdown-toggle selectpicker btn-default" title="{{itemBag.rarity.currentText}}" ng-click="itemBag.rarity.showOptions = !itemBag.rarity.showOptions"><span class="filter-option pull-left">{{itemBag.rarity.currentText}}</span>&nbsp;<span class="caret"></span></button>
+                                                    <div class="dropdown-menu open">
+                                                        <ul class="dropdown-menu inner selectpicker">
+                                                            <li ng-repeat="option in itemBag.rarity.options" ng-class="{'selected': itemBag.rarity.currentIndex == $index}">
+                                                                <a ng-click="itemBag.rarity.choose($index)">
+                                                                    <span class="text">{{option}}</span>
+                                                                    <span class="glyphicon glyphicon-ok check-mark"></span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="btn-group bootstrap-select" ng-class="{'open': itemBag.quality.showOptions}">
+                                                    <button type="button" class="btn dropdown-toggle selectpicker btn-default" title="{{itemBag.quality.currentText}}" ng-click="itemBag.quality.showOptions = !itemBag.quality.showOptions"><span class="filter-option pull-left">{{itemBag.quality.currentText}}</span>&nbsp;<span class="caret"></span></button>
+                                                    <div class="dropdown-menu open" style="max-height:329px;overflow-y:auto;overflow-x:hidden;">
+                                                        <ul class="dropdown-menu inner selectpicker">
+                                                            <li ng-repeat="option in itemBag.quality.options" ng-class="{'selected': itemBag.quality.currentIndex == $index}">
+                                                                <a ng-click="itemBag.quality.choose($index)">
+                                                                    <span class="text">{{option}}</span>
+                                                                    <span class="glyphicon glyphicon-ok check-mark"></span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="bag-search">
+                                                    <input class="search-control" placeholder="饰品名称" name="SteamItem[zh_name]" id="SteamItem_zh_name" type="text" maxlength="60">
+                                                    <button class="btn-search" type="submit"><i class="search-icon"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="bag-in my-bag">
+                                        <div class="steam-box clearfix">
+                                            <div class="items">
+                                                <span class="empty">没有找到数据.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="keys" style="display:none" title="/user/inventory.html"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="inventory.tabState === 1" id="steam-inventory" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+                            <div id="user-steam-inventory" class="list-view">
+                                <div id="steam-inventory-sort" class="bag-type bag-type-data">
+                                    <a href="/guess/match-inventory.html?SteamInventory_sort=position" class="ajax-sort active">按位置</a>
+                                    <a href="/guess/match-inventory.html?SteamInventory_sort=price" class="ajax-sort  ml-5">按价格</a>
+                                </div>
+                                <div class="bag-in my-bag">
+                                    <div class="steam-box clearfix">
+                                        <div id="steam-inventory-item" class="items">
+                                            <div class="items">
+                                                <span class="empty">您还未绑定steam，不能使用steam库存进行竞猜。现在去<a href="/steam/bind.html">绑定steam</a>。</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="keys" style="display:none" title="/guess/match-inventory.html"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steam-box-bet" style="display:none;">
+                        <span class="mr-10">单次只允许六个饰品</span>
+                        <a id="confirm-bet" class="btn btn-bet btn-warning disabled" data-loading-text="竞猜中..." autocomplete="off" disabled="disabled">确认竞猜</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" ng-show="spinachCorps.guess.state === 1" id="gold-box" style="display:block;">
+                <div ng-cloak class="spinach-pick-data">
+                    <div class="tables spinach-pick-odds">
+                        <div class="tr ">
+                            <div class="td text-right">
+                                {{spinachCorps.teamA.name}} 赔率 </div>
+                            <div class="td">
+                                1 : {{spinachCorps.teamA.odds}} </div>
+                            <div class="td text-right">
+                                {{spinachCorps.teamB.name}} 赔率 </div>
+                            <div class="td">
+                                1 : {{spinachCorps.teamB.odds}} </div>
+                        </div>
+                        <div class="tr">
+                            <div class="td text-right">
+                                可能获得 </div>
+                            <div class="td">
+                                <span>0.00</span> 赔 <span>0.00</span> </div>
+                            <div class="td text-right">
+                                可能获得 </div>
+                            <div class="td">
+                                <span>0.00</span> 赔 <span>0.00</span> </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="spinachPick.state !== -1" class="vluebet-box">
+                    <p class="text-center f-14 deep-gray">
+                        <span>账户余额<span class="ml-35 vb-f mr-5">0</span>P</span>
+                        <span class="ml-55 mr-15">投注</span>
+                        <input class="vluebet-text mr-20" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value = this.value.replace(/\D/g, '')" maxlength="6" type="text" value="" name="gold" id="gold">
+                        <button class="btn btn-value-bet" data-loading-text="确认中..." autocomplete="off" type="submit" data-url="/guess/gold-create.html?id=163829">确认</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

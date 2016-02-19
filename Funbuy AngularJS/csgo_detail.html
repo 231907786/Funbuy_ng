@@ -1,0 +1,455 @@
+<!-- Project:Funbuy
+Author: yeshanqi
+Date:2016-02-18 -->
+
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head lang="zh_cn">
+    <!-- <script src="csgo_detail/ta.php" async="" charset="utf-8" type="text/javascript"></script>
+    <script src="csgo_detail/contains.js" async="" charset="utf-8" type="text/javascript"></script>
+    <script src="csgo_detail/v.htm" charset="utf-8"></script>
+    <script src="csgo_detail/taskMgr.js" async="" charset="utf-8" type="text/javascript"></script>
+    <script src="csgo_detail/views.js" async="" charset="utf-8" type="text/javascript"></script> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="language" content="zh_cn">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <title>csgo竞猜详情</title>
+    <link rel="stylesheet" href="style/bootstrap.css">
+    <script src="jslib/jquery.min.js"></script>
+    <script src="jslib/angular-1.4.9.js"></script>
+    <script src="jslib/angular-ui-router.min.js"></script>
+    <script src="jslib/angular-animate-1.4.9.js"></script>
+    <script src="jslib/ui-bootstrap-custom-tpls-1.1.2.js"></script>
+    <!--  -->
+    <!-- <link rel="stylesheet" type="text/css" href="csgo_detail/public.css">
+    <link rel="stylesheet" type="text/css" href="csgo_detail/jquery.css">
+    <link rel="stylesheet" type="text/css" href="csgo_detail/quiz.css">
+    <link rel="stylesheet" type="text/css" href="csgo_detail/iconfont.css"> -->
+    <link rel="stylesheet" type="text/css" href="style/public.css">
+    <link rel="stylesheet" type="text/css" href="style/quiz.css">
+    <link rel="stylesheet" type="text/css" href="style/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="style/csgo_detail.css">
+    <!-- <script src="csgo_detail/hm.js"></script> -->
+    <!-- <script type="text/javascript" src="csgo_detail/jquery_002.js"></script> -->
+    <!-- <script type="text/javascript" src="csgo_detail/icheck.js"></script>
+    <script type="text/javascript" src="csgo_detail/respond.js"></script> -->
+    <script src="script/common/common.module.js"></script>
+    <script src="script/core/core.module.js"></script>
+    <script src="script/core/core.dataServer.js"></script>
+    <script src="script/feature/feature.module.js"></script>
+    <script src="script/layout/layout.module.js"></script>
+    <script src="script/main/main.module.js"></script>
+    <script src="script/widgets/widgets.module.js"></script>
+    <script src="script/app.module.js"></script>
+    <script src="script/main/csgo_detail/csgo_detail.js"></script>
+</head>
+
+<body>
+    <!-- <script type="text/javascript" src="csgo_detail/Chart.js"></script> -->
+    <div id="wrap" ng-controller="csgo.detail.baseCtrl">
+        <div id="bodyer">
+            <div class="league-nav">
+                <div class="container">
+                    <ul>
+                        <li class="state-color state-clear active">
+                            <a href="/match/10000477.html">
+                                <span class="">猜输赢</span><span class="state-icon background-clear">已结束</span>
+                            </a>
+                        </li>
+                        <li class="state-color state-clear">
+                            <a href="/match/10000480.html">
+                                <span class="">让分局</span><span class="state-icon background-clear">已结束</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container-header">
+                <!-- <input id="is-start" value="yes" type="hidden"> -->
+                <div class="container-header-icon">
+                    <div class="left-icon">
+                        <a href="/">
+                            <div class="home"></div>
+                        </a>
+                        <a href="/match.html">
+                            <div class="home-right"></div>
+                        </a>
+                    </div>
+                    <div class="match-team match-csgo">
+                        <i></i>
+                        <div><span ng-bind="spinach.matchName"></span><span ng-bind="spinach.teamA.name"></span> VS <span ng-bind="spinach.teamB.name"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-main containerbg-csgo">
+                    <div class="num-row">
+                        <div class="num-rol num-rol-right">比赛开始时间:<span ng-bind="spinach.header.timeText"></span><span class="status-clear time-hour" data-time="1455397200" ng-bind="spinach.header.stateText"></span></div>
+                        <div class="num-rol num-rol-mid rangfen">
+                        </div>
+                    </div>
+                    <div class="pic-row" ng-cloak>
+                        <div class="pic-left">
+                            <div class="spinach-item-img pull-right">
+                                <img ng-src="{{spinach.teamA.img}}" alt="{{spinach.teamA.name}}" height="80" width="130">
+                                <i ng-show="spinach.teamA.win" class="spinach-status-win"></i>
+                            </div>
+                            <div class="pic-pull-left">
+                                <p class="spinach-item-name">
+                                    <span class="ellipsis" title="{{spinach.teamA.name}}" ng-bind="spinach.teamA.name"></span>
+                                </p>
+                                <span class="spinach-odds">1 : {{spinach.teamA.odds}}</span></span>
+                            </div>
+                        </div>
+                        <div class="pic-mid">
+                            <div class="td">
+                                <p ng-bind="spinach.score"></p>
+                                <p>VS</p>
+                                <span>BO{{spinach.rounds}}</span>
+                            </div>
+                        </div>
+                        <div class="pic-right">
+                            <div class="spinach-item-img pull-left">
+                                <img ng-src="{{spinach.teamB.img}}" alt="{{spinach.teamB.name}}" height="80" width="130">
+                                <i ng-show="spinach.teamB.win" class="spinach-status-win"></i>
+                            </div>
+                            <div class="pic-pull-right">
+                                <p class="spinach-item-name">
+                                    <span class="ellipsis" title="{{spinach.teamB.name}}" ng-bind="spinach.teamB.name"></span>
+                                </p>
+                                <span class="spinach-odds">1 : {{spinach.teamB.odds}}</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-header-bottom">
+                    <div class="blue-line pull-left"></div>
+                    <div class="red-line pull-left"></div>
+                </div>
+            </div>
+            <div class="container container-bottom clearfix">
+                <div class="container-left">
+                    <div class="pdou-quiz">
+                        <ul class="nav nav-tabs">
+                            <li id="bean-click" class="bean-click" ng-class="{true: 'active'}[betTab.active == 0]"><a ng-click="betTab.active = 0">P豆竞猜</a></li>
+                            <li class="decor-click" ng-class="{true: 'active'}[betTab.active == 1]"><a ng-click="betTab.active = 1">饰品竞猜</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div ng-class="{'active': betTab.active == 0}" class="tab-pane decor-quiz" id="pdou">
+                            <div class="win-or-lose pdou-winlose">
+                                <div class="is-win winlose" ng-click="betTab.chooseWin(1)" ng-class="{true: 'active'}[betTab.choosed == 1]">
+                                    <span class="guess-name-width ellipsis" title="{{spinach.teamA.name}}" ng-bind="spinach.teamA.name"></span>
+                                    <span class="inline">胜利</span>
+                                    <span class="color-yel inline">（1:</span><span class="pdou-pl color-yel inline" ng-bind="spinach.teamA.odds"></span><span class="color-yel inline">）</span>
+                                    <span class="pdou-zcl inline" ng-bind="spinach.teamA.winRate"></span>%
+                                </div>
+                                <div class="is-lose winlose" ng-click="betTab.chooseWin(2)" ng-class="{true: 'active'}[betTab.choosed == 2]">
+                                    <span class="guess-name-width ellipsis" title="{{spinach.teamB.name}}" ng-bind="spinach.teamB.name"></span>
+                                    <span>胜利</span>
+                                    <span class="color-yel">（1:</span><span class="pdou-pl color-yel" ng-bind="spinach.teamB.odds"></span><span class="color-yel">）</span>
+                                    <span class="pdou-zcl" ng-bind="spinach.teamB.winRate"></span>%
+                                </div>
+                            </div>
+                            <div class="pdou-guess-details">
+                                <div class="guess-details ">
+                                    <p>注意:请先阅读竞猜规则，竞猜后视为您同意遵守本规则。
+                                        <a href="/help/new.html?id=337">点击查看</a>
+                                    </p>
+                                    <div class="guess-input">
+                                        竞猜额
+                                        <input class="guess-text" id="guess-text" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeyup="this.value = this.value.replace(/\D/g, '')" maxlength="6" style="width: 120px;height: 33px;" type="text"><span class="color-green guess-text-bean">P豆</span> 预计可得 <span class="guess-get pdou-guess-get color-green">0</span><span class="color-green">P豆</span>
+                                        <button type="button" class="guess-submit pdou-submit button-loading" autocomplete="off">确认竞猜</button>
+                                    </div>
+                                    <div class="pdou-inventory">账户P豆余额<span class="pdou-inventory-num color-green"></span>P豆</div>
+                                </div>
+                            </div>
+                            <!-- <div class="guess-no-enter">
+                                    <p><a href="http://passport..com/login.html?redirect=/match/10000477.html">请先登录后再进行竞猜</a></p>
+                                </div> -->
+                        </div>
+                        <div ng-class="{'active': betTab.active == 1}" class="tab-pane bean-quiz" id="bean">
+                            <div class="win-or-lose bean-winlose">
+                                <div class="is-win winlose" ng-click="betTab.chooseWin(3)" ng-class="{true: 'active'}[betTab.choosed == 3]">
+                                    <span class="guess-name-width ellipsis" title="{{spinach.teamA.name}}" ng-bind="spinach.teamA.name"></span>
+                                    <span>胜利</span>
+                                    <span class="color-yel">（1:</span><span class="bean-pl color-yel" ng-bind="spinach.teamA.odds"></span><span class="color-yel">）</span>
+                                    <span class="bean-zcl" ng-bind="spinach.teamA.winRate"></span>%
+                                </div>
+                                <div class="is-lose winlose" ng-click="betTab.chooseWin(4)" ng-class="{true: 'active'}[betTab.choosed == 4]">
+                                    <span class="guess-name-width ellipsis" title="{{spinach.teamB.name}}" ng-bind="spinach.teamB.name"></span>
+                                    <span>胜利</span>
+                                    <span class="color-yel">（1:</span><span class="bean-pl color-yel" ng-bind="spinach.teamB.odds"></span><span class="color-yel">）</span>
+                                    <span class="bean-zcl" ng-bind="spinach.teamB.winRate"></span>%
+                                </div>
+                            </div>
+                            <div class="bean-guess-details">
+                                <div class="guess-details">
+                                    <p>注意:请先阅读竞猜规则，竞猜后视为您同意遵守本规则。 <a href="/help/new.html?id=337">点击查看</a>
+                                    </p>
+                                    <div class="decor-num">
+                                        <form id="myForm">
+                                            <div class="decor-pic">
+                                            </div>
+                                        </form>
+                                        <div class="guess-num">
+                                            <div class="pull-left">
+                                                竞猜额 $<span class="bean-guess-num">0</span>每次限竞猜6件 </div>
+                                            <div class="pull-right">
+                                                预计可得<span class="guess-get color-green">$</span><span class="bean-guess-get color-green">0</span>
+                                                <button class="guess-submit decor-submit button-loading" type="button" autocomplete="off">
+                                                    确认竞猜 </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inventory" id="inventory">
+                                    <div class="guess-nav">
+                                        <ul class="nav nav-tabs inventory-ul" role="tablist">
+                                            <!-- <li class="vp-click category-csgo">DOTA2库存</li> -->
+                                            <li class="csgo-click active">CSGO库存</li>
+                                        </ul>
+                                    </div>
+                                    <div class="vp-inventory" id="kc">
+                                        <div class="inventory-sort" id="inventory-sort">
+                                            <div class="pull-left" id="my-bag">我的背包<span class="back-num">0</span>
+                                                <span ng-click="betTab.myBag.sort('price')" class="price-sort">按价格</span><span class="glyphicon" ng-class="{'desc': 'glyphicon-arrow-down', 'asc': 'glyphicon-arrow-up'}[betTab.myBag.priceSort]"></span>
+                                            </div>
+                                            <div class="pull-right">
+                                                <!--                                    <div class="input-class" id="input-serch">
+                                                                                    <i></i>
+                                                                                    <input type="text" value="">
+                                                                                </div>-->
+                                                <div class="pull-right decor-class">
+                                                    <div ng-cloak class="btn-group bootstrap-select quality-select decor-class-select">
+                                                        <button title="{{facade.currentText}}" type="button" class="btn dropdown-toggle selectpicker btn-default" ng-click="facade.showOptions = !facade.showOptions"><span class="filter-option pull-left" ng-bind="facade.currentText"></span>&nbsp;<span class="caret"></span></button>
+                                                        <div ng-show="facade.showOptions" class="dropdown-menu open" style="display:block;max-height:329px;overflow-y:auto;">
+                                                            <ul class="dropdown-menu inner selectpicker">
+                                                                <li ng-repeat="option in facade.options" ng-class="{'selected': facade.currentIndex == $index}">
+                                                                    <a ng-click="facade.choose($index)">
+                                                                        <span class="text">{{option}}</span><span class="glyphicon glyphicon-ok check-mark"></span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pull-right decor-class">
+                                                    <div ng-cloak class="btn-group bootstrap-select rarity-select decor-class-select">
+                                                        <button title="{{ravity.currentText}}" type="button" class="btn dropdown-toggle selectpicker btn-default" ng-click="ravity.showOptions = !ravity.showOptions"><span class="filter-option pull-left" ng-bind="ravity.currentText"></span>&nbsp;<span class="caret"></span></button>
+                                                        <div ng-show="ravity.showOptions" class="dropdown-menu open" style="display:block;">
+                                                            <ul class="dropdown-menu inner selectpicker">
+                                                                <li ng-repeat="option in ravity.options" ng-class="{'selected': ravity.currentIndex == $index}"><a ng-click="ravity.choose($index)"><span class="text">{{option}}</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inventory-pic">
+                                            <div class="inventory-i">
+                                                <div style="overflow: hidden; padding: 0px; width: 705px;" class="inventory-img vp-inventory-img" id="vp-bag-img">
+                                                    <div style="width: 705px; height: 0px;" class="jspContainer">
+                                                        <div style="padding: 0px; top: 0px; left: 0px; width: 705px;" class="jspPane"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="nodecor">
+                                                <div class="no-decor">
+                                                    <i></i>您的背包中没有任何饰品,<a href="/user/inventory-steam.html">从Steam背包存入饰品</a>!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="guess-no-enter hide">
+                                    <p><a href="login.html?redirect=/match/10000477.html">请先登录后再进行竞猜</a></p>
+                                </div> -->
+                        </div>
+                    </div>
+                    <div class="zb-league" id="guess-live">
+                        <div class="nav-league">
+                            <ul class="nav nav-tabs" role="tablist" id="tv-tab">
+                                <li role="presentation" class="tw-league" data-category="csgo"><a href="#tw" role="tab" data-toggle="tab" aria-controls="tw" aria-expanded="false">文字直播</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane in hm-league-zb" id="tvlive" aria-labelledby="profile-tab">
+                                <div id="tvlive-box">
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane tw-league-zb" id="tw" aria-labelledby="profile-tab">
+                                <div class="tw-league-container">
+                                    <div class="tw-live-map pull-left">
+                                        <div class="live-map-head" id="live-map-head">
+                                        </div>
+                                        <div class="tp-league-zb" id="tp-league-zb"></div>
+                                    </div>
+                                    <div class="wz-league-zb pull-right" id="tw-live-scrollbar">
+                                        <ul id="tw-live">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guess-nav">
+                        <ul class="nav nav-tabs" id="myTabs">
+                            <li class="my-click" ng-class="{true: 'active'}[guessTab.state == 0]">
+                                <a ng-click="guessTab.changeTab(0)">我的竞猜</a>
+                            </li>
+                            <li class="tj-click" ng-class="{true: 'active'}[guessTab.state == 1]">
+                                <a ng-click="guessTab.changeTab(1)">竞猜推荐</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content guess-sj-content">
+                        <div ng-show="guessTab.state === 0" class="tab-pane my-guess active">
+                            <div class="no-history">暂无竞猜记录</div>
+                        </div>
+                        <div ng-show="guessTab.state === 1" class="tab-pane groom-guess active">
+                            <div class="quiz-list">
+                                <ul id="quiz-list">
+                                    <div class="no-list no-background">暂无其它比赛</div>
+                                </ul>
+                                <!-- <div class="road-more">点击加载更多</div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-graph pull-right" id="right-graph"></div>
+                </div>
+                <div class="container-right" ng-controller="csgo.detail.rightCtrl">
+                    <div style="display: none;" class="nologin-people-mess">
+                        <div class="mess-head">
+                            <div class="you-no-login pull-left">您还没有登录！</div>
+                            <div class="login-tovp pull-right">
+                                <a href="/login.html?redirect=/match/10000477.html">
+                                    <div class="login-tovp-bg">登录</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-cloak class="people-mess" id="people-mess">
+                        <div class="mess-head">
+                            <div class="mess-img"><img ng-src="{{profile.avatar}}" alt="profile.name" height="30" width="30"></div>
+                            <div class="mess-name color-white">{{profile.name}}</div>
+                            <div class="mess-gread level-{{profile.level}}"></div>
+                        </div>
+                        <div class="mess-details">
+                            <div class="details-row">
+                                <div class="details-rol">竞猜数</div>
+                                <div class="details-rol">赢</div>
+                                <div class="details-rol">胜率</div>
+                            </div>
+                            <div class="details-row details-num">
+                                <div class="details-rol color-white">{{profile.guesses}}</div>
+                                <div class="details-rol color-green">{{profile.wins}}</div>
+                                <div class="details-rol color-white">{{profile.winRate}}%</div>
+                            </div>
+                        </div>
+                        <div class="week-get"><i></i>本周收益</div>
+                        <div class="get-num">
+                            <ul>
+                                <li>饰品<span class="color-blue week-item-get">$ {{profile.income.deco}}</span></li>
+                                <li>P豆<span class="color-green">{{profile.income.bean}} P</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="quiz-recom">
+                        <div class="doyen-comment-head"><i></i>竞猜推荐</div>
+                        <ul id="quiz-recom-list">
+                            <div class="noquiz-recom-list">暂无其它比赛</div>
+                        </ul>
+                    </div>
+                    <div class="quiz-right-foot th-rank">
+                        <div class="quiz-bs">
+                            <i class="blue-round"></i>
+                            <div>土豪排行榜</div>
+                        </div>
+                        <div class="th-ul">
+                            <ul class="ulbg" id="th-ul">
+                                <li ng-repeat="user in th.users" ng-class-even="'even'" class="guess-rank-media th-rank-media" data-list="{{$index + 1}}">
+                                    <div class="th-height" ng-class="{'border-bottom': $index === th.state}">
+                                        <div class="media-left media-middle">
+                                            <div class="guess-rank-list">{{$index + 1}}</div>
+                                        </div>
+                                        <div class="media-left media-middle">
+                                            <a href="/user/{{user.id}}.html"><img class="th-user-avatar" ng-src="{{user.avatar}}" height="26" width="26"></a>
+                                        </div>
+                                        <div class="media-left media-middle th-name ellipsis"><a href="/user/{{user.id}}.html">{{user.name}}</a></div>
+                                        <div class="media-body media-middle">
+                                            <div class="level-{{user.level}}"></div>
+                                            <div class="pull-right">{{user.wealth}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="spinach-article th-pic" style="display:block;">
+                                        <div ng-repeat="item in user.items" class="steam-item qualitly-normal">
+                                            <img class="item-bg" ng-src="{{item.bgImg}}" height="48" width="69">
+                                            <img class="item-img" ng-src="{{item.img}}" alt="{{item.altText}}" height="48" width="69">
+                                            <span class="exterior-box rarity-box ellipsis" title="{{item.name}}">{{item.name}}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="quiz-help">
+                        <div class="quiz-bs">
+                            <i class="blue-round"></i>
+                            <div>竞猜帮助</div>
+                        </div>
+                        <div class="quiz-help-icon">
+                            <div class="help-row">
+                                <a href="/help/new.html?id=491&amp;lang=zh_cn">
+                                    <div class="help-rol jieshao">
+                                        <i></i>
+                                        <p>新手指引</p>
+                                    </div>
+                                </a>
+                                <a href="/help/new.html?id=582&amp;lang=zh_cn">
+                                    <div class="help-rol cunqu">
+                                        <i></i>
+                                        <p>存取教程</p>
+                                    </div>
+                                </a>
+                                <a href="/help/new.html?id=78&amp;lang=zh_cn">
+                                    <div class="help-rol jiaocheng">
+                                        <i></i>
+                                        <p>竞猜教程</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="help-row help-row2">
+                                <a href="/help/new.html?id=575&amp;lang=zh_cn">
+                                    <div class="help-rol zhinan">
+                                        <i></i>
+                                        <p>启用手机令牌</p>
+                                    </div>
+                                </a>
+                                <a href="/help/new.html?id=337&amp;lang=zh_cn">
+                                    <div class="help-rol jiaoyi">
+                                        <i></i>
+                                        <p>竞猜规则</p>
+                                    </div>
+                                </a>
+                                <a href="/user/ticket.html?lang=zh_cn">
+                                    <div class="help-rol faq">
+                                        <i></i>
+                                        <p>问题反馈</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="history-match" id="history-match"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <script type="text/javascript" src="csgo_detail/quiz.js"></script> -->
+</body>
+
+</html>

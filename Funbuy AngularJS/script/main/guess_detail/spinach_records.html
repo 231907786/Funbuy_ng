@@ -1,0 +1,47 @@
+<div class="spinach-record">
+    <div id="yw1" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+            <li ng-class="{0: 'ui-tabs-active ui-state-active'}[spinachRecord.tabState]" class="ui-state-default ui-corner-top" role="tab" tabindex="0" aria-controls="yw1_tab_0" aria-labelledby="ui-id-3" aria-selected="true"><a style="cursor:pointer" ng-click="spinachRecord.switchTab('0')" title="#yw1_tab_0" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">饰品竞猜记录</a></li>
+            <li ng-class="{1: 'ui-tabs-active ui-state-active'}[spinachRecord.tabState]" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="yw1_tab_1" aria-labelledby="ui-id-4" aria-selected="false"><a style="cursor:pointer" ng-click="spinachRecord.switchTab('1')"  title="#yw1_tab_1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">P豆竞猜记录</a></li>
+        </ul>
+        <div id="yw1_tab_0" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-3" role="tabpanel" aria-expanded="true" aria-hidden="false">
+            <div id="yw1" class="list-view">
+                <ul ng-if="spinachRecord.tabState == 0" ng-repeat="row in spinachRecord.records" class="spinach-record-list clearfix">
+                    <li ng-repeat="user in row">
+                        <p>
+                            <span class="mr-10 deep-gray pull-right"><span ng-bind="user.timeText"></span>&nbsp;竞猜了</span>
+                            <a class="ellipsis spinach-history-name" title="{{user.name}}" target="_blank" href="http://dota2.vpgame.com/user/{{user.id}}.html" ng-bind="user.name"></a>
+                            <span class="level-9">LV<span ng-bind="user.level"></span></span>
+                        </p>
+                        <div class="mt-5">
+                            <div ng-repeat="item in user.items" class="steam-item" ng-class="{'unique': 'qualitly-unique', 'strange': 'qualitly-strange', 'genuine': 'qualitly-genuine'}[item.qualitly]">
+                                <a href="{{item.href}}" title="{{item.name}}">
+                                    <img width="78" height="51" ng-src="{{item.imgSrc}}" alt="{{item.name}}">
+                                </a>
+                                <span class="steam-price hide" ng-bind="item.price"></span>
+                                <span class="rarity-box" ng-class="{'common': 'rarity-common', 'rare': 'rarity-rare', 'mythical': 'rarity-mythical', 'uncommon': 'rarity-uncommon', 'legendary': 'rarity-legendary', 'arcana': 'rarity-arcana', 'immortal': 'rarity-immortal', }[item.rarity]" ng-bind="item.rarity|rarityText"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul ng-if="spinachRecord.tabState == 1" ng-repeat="row in spinachRecord.records" class="spinach-record-list clearfix">
+                    <li ng-repeat="user in row">
+                        <p class="spinach-record-name">
+                            <a target="_blank" href="/user/{{user.id}}.html" ng-bind="user.name"></a> <span class="deep-gray pull-right mr-10" ng-bind="user.timeText"></span>
+                        </p>
+                        <div class="mt-5">
+                            <a href="/user/{{user.id}}.html"><img class="spinach-record-user" ng-src="{{user.imgSrc}}" width="50" height="50" alt="{{user.name}}"></a>
+                            <div class="spinach-record-data">
+                                <p>竞猜了</p>
+                                <p class="vb-f mt-5"><span ng-bind="user.value|numSegment"></span>&nbsp;P</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="keys" style="display:none" title="/guess/match-item.html?id=147267"><span>108340065</span><span>108340023</span><span>108340009</span><span>108340002</span><span>108339974</span><span>108339939</span><span>108339918</span><span>108339911</span><span>108339904</span><span>108339897</span><span>108339862</span><span>108339855</span><span>108339848</span><span>108339841</span><span>108339785</span><span>108339750</span><span>108339736</span><span>108339729</span><span>108339701</span><span>108339694</span><span>108339659</span><span>108339638</span><span>108339624</span><span>108339617</span><span>108339610</span><span>108339596</span><span>108339575</span><span>108339547</span><span>108339540</span><span>108339526</span><span>108339477</span><span>108339449</span><span>108339435</span><span>108339421</span><span>108339407</span><span>108339400</span><span>108339386</span><span>108339358</span><span>108339337</span><span>108339323</span></div>
+            </div>
+        </div>
+        <div id="yw1_tab_1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-live="polite" aria-labelledby="ui-id-4" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"></div>
+    </div>
+</div>

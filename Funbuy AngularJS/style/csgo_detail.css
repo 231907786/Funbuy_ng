@@ -1,0 +1,8 @@
+.ulbg > li > div:nth-child(2) {
+	max-height: 0;
+	transition: max-height .25s ease-out;
+}
+.ulbg > li:hover > div:nth-child(2) {
+	transition: max-height .35s ease-in;
+	max-height: 300px  ;
+}

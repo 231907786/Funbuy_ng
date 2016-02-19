@@ -1,0 +1,64 @@
+<!-- Project:Funbuy
+Author: yeshanqi
+Date:2016-02-18 -->
+<!DOCTYPE html>
+<html lang="zh_cn" ng-app="app">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>竞猜首页</title>
+	    <link rel="stylesheet" href="style/bootstrap.css">
+	    <link rel="stylesheet" href="style/base.css">
+	    <script src="jslib/jquery.min.js"></script>
+	    <script src="jslib/angular-1.4.9.js"></script>
+	    <script src="jslib/angular-ui-router.min.js"></script>
+	    <script src="jslib/angular-animate-1.4.9.js"></script>
+	    <script src="jslib/ui-bootstrap-custom-tpls-1.1.2.js"></script>
+	    <!--  -->
+	    <link rel="stylesheet" href="style/guess_index.css">
+	    <script src="script/common/common.module.js"></script>
+	    <script src="script/core/core.module.js"></script>
+
+		<script src="jslib/angular-animate-1.4.9.js"></script>
+		<script src="jslib/ui-bootstrap-custom-tpls-1.1.2.js"></script>
+
+	    <script src="script/core/core.dataServer.js"></script>
+	    <script src="script/feature/feature.module.js"></script>
+	    <script src="script/layout/layout.module.js"></script>
+	    <script src="script/main/main.module.js"></script>
+	    <script src="script/widgets/widgets.module.js"></script>
+	    <script src="script/app.module.js"></script>
+	    <script src="script/main/guess_index/guess_index.js"></script>
+	</head>
+	<body>
+	    <div style="padding-top: 95px;" id="wraper" class="announcement">
+	        <div class="container">
+	            <div style="height:390px;" ng-controller="guess.index.carouselCtrl">
+	                <uib-carousel interval="carousel.interval">
+	                    <uib-slide ng-repeat="slide in carousel.slides">
+	                        <a href="{{slide.href}}" target="_blank" title="{{slide.title}}">
+	                            <img ng-src="{{slide.image}}" width="1080" height="390" title="{{slide.title}}">
+	                        </a>
+	                        <!-- 中间区域
+	    		       <div class="carousel-caption">
+	    		      </div> -->
+	                    </uib-slide>
+	                </uib-carousel>
+	            </div>
+	        </div>
+	        <div id="bodyer" class="mt-20 mb-40">
+	            <div class="container bodyer">
+	                <div class="common-breadcrumb">
+	                    <ul>
+	                        <li><a href="">首页</a><em>&gt;</em></li>
+	                        <li class="active">竞猜</li>
+	                    </ul>
+	                </div>
+	                <div class="w-730 pull-left" ng-include="'script/main/guess_index/left.html'" ng-controller="guess.index.leftCtrl">
+	                </div>
+	                <div class="w-320 pull-right" ng-include="'script/main/guess_index/right.html'" ng-controller="guess.index.rightCtrl">
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</body>
+</html>
